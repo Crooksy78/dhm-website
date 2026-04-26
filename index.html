@@ -517,6 +517,117 @@
     .contact-grid { grid-template-columns: 1fr; }
   }
 
+  /* MOBILE NAV DRAWER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-dark);
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .nav-drawer.is-open { transform: translateX(0); }
+
+  .nav-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .nav-drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-close:hover { color: #ffffff; }
+
+  .nav-drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-drawer-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-drawer-links li:first-child {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-drawer-links a {
+    display: block;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-links a:hover { color: #ffffff; }
+
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -591,6 +702,11 @@
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
 
@@ -795,6 +911,67 @@
 <footer>
   <div class="container">© 2025 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
 </footer>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <div class="nav-drawer-header">
+    <a href="/" class="logo">Dark Horse Marketing<span>.</span></a>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <ul class="nav-drawer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="/voice-agents#demo">Free Voice Agent Demo</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var backdrop = document.getElementById('navBackdrop');
+  var close = document.getElementById('navClose');
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    toggle.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', function() {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  close.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+
+  drawer.querySelectorAll('.nav-drawer-links a').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
+</script>
 
 </body>
 </html>
