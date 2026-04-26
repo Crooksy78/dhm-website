@@ -1,0 +1,10 @@
+.env
+credentials.json
+token.json
+.tmp/
+__pycache__/
+*.pyc
+tools/
+workflows/
+CLAUDE.MD
+*.bak
