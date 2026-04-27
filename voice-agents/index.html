@@ -648,6 +648,93 @@
     line-height: 1.5;
   }
 
+  /* FAQ */
+  .faq {
+    padding: 72px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+  }
+
+  .faq-header h2 {
+    font-weight: 800;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+
+  .faq-list {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .faq-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item[open] {
+    border-color: var(--accent);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 28px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    letter-spacing: -0.01em;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question::marker { display: none; }
+
+  .faq-question::after {
+    content: '+';
+    min-width: 28px;
+    height: 28px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 8px;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  details[open] > .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 20px 28px 24px;
+    font-size: 17px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .faq-answer p + p {
+    margin-top: 12px;
+  }
+
   /* CONTACT */
   .contact {
     padding: 72px 0;
@@ -751,6 +838,10 @@
     .about-inner { grid-template-columns: 1fr; gap: 24px; }
     .about-label { position: static; }
     .headshot-placeholder { width: 140px; }
+    .faq { padding: 56px 0; }
+    .faq-list { grid-template-columns: 1fr; }
+    .faq-question { padding: 20px; font-size: 16px; }
+    .faq-answer { padding: 16px 20px 20px; }
     .contact { padding: 56px 0; }
     .contact-grid { grid-template-columns: 1fr; }
   }
@@ -927,6 +1018,7 @@
     <ul class="nav-links">
       <li><a href="/#services">Services</a></li>
       <li><a href="#demo">Free Demo</a></li>
+      <li><a href="#faq">Voice Agent FAQ</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1226,6 +1318,184 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="section-tag">FAQ</span>
+      <h2>Common Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">What's the difference between this and just hiring a receptionist?</summary>
+        <div class="faq-answer">
+          <p>A full-time receptionist in Australia runs $65,000–$70,000 a year. Available Monday to Friday, 9 to 5. Takes leave. Gets sick. Misses calls. An AI agent at $1,000/month is $12,000 a year, runs 24/7, and handles volume a single person couldn't.</p>
+          <p>For most businesses the maths is pretty clear — and that's before you count the revenue that was walking out the door during after-hours and weekends.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What exactly is an AI agent?</summary>
+        <div class="faq-answer">
+          <p>An AI agent is software that handles a specific business task — answering calls, responding to text enquiries, following up with leads, booking appointments — automatically, around the clock.</p>
+          <p>You train it on your business: your services, your pricing, your process. After that, it runs without you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What kind of businesses do you work with?</summary>
+        <div class="faq-answer">
+          <p>Mainly owner-operated businesses that have moved past the one-man-band stage but aren't a big corporate either. Strong fit tends to be trades (plumbers, electricians, HVAC), beauty and skin clinics, hair salons, real estate, and professional services.</p>
+          <p>If you're missing calls, losing leads to slow follow-up, or paying staff to answer routine questions — there's probably something here for you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What kinds of agents do you build?</summary>
+        <div class="faq-answer">
+          <p>Depends on where the biggest gap is in your business. Common starting points are an after-hours call handler, a lead response bot that follows up web enquiries within seconds, a booking and rebooking assistant, or a review follow-up sequence.</p>
+          <p>Most businesses end up with a few running in the background over time — but we always start with the one that solves the most obvious problem first.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Will my customers know they're talking to AI?</summary>
+        <div class="faq-answer">
+          <p>Some will, some won't. And to be honest, best practice is to be upfront about it on the call.</p>
+          <p>Most people don't care as much as you'd think. What they care about is getting a response quickly, not being left on hold, and not having to call back three times. That's what the agents deliver.</p>
+          <p>After the first interaction, most callers appreciate the speed and consistency more than they're bothered by anything else.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Does it actually run around the clock?</summary>
+        <div class="faq-answer">
+          <p>Yes. No sick days, no public holidays, no "just missed a call while on site." The agents run continuously.</p>
+          <p>If someone calls at 9pm on a Sunday, they get a response. That's the whole point.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What if it gives a customer the wrong information?</summary>
+        <div class="faq-answer">
+          <p>It only works from what you've given it. We build each agent on your approved content — your services, prices, policies, processes.</p>
+          <p>If a question falls outside what it knows, it captures the enquiry and flags it for you rather than winging it.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What happens when something gets complicated or a customer is difficult?</summary>
+        <div class="faq-answer">
+          <p>The agents are set up with clear escalation rules.</p>
+          <p>If a conversation hits a trigger — an angry caller, a high-value lead, something that needs a real person — it gets routed to you or your team immediately.</p>
+          <p>The agent handles the volume; the important stuff still reaches you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What channels can it handle?</summary>
+        <div class="faq-answer">
+          <p>Depending on what you need, agents can handle inbound calls, outbound calls, SMS conversations, web chat, and social media messages.</p>
+          <p>Most clients start with one channel and add others once the first is running well.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does it handle my calendar and bookings?</summary>
+        <div class="faq-answer">
+          <p>If you're already using booking software, we connect directly to it.</p>
+          <p>If not, we sort something out as part of the setup. Appointments go straight into your system — nothing lands in a black hole.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Can you work with the number I already have?</summary>
+        <div class="faq-answer">
+          <p>Yes. We can work with your current number using call forwarding, or set up a new one if that's cleaner. Either way it's straightforward.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How do I know what's happening inside the conversations?</summary>
+        <div class="faq-answer">
+          <p>You get call summaries, conversation logs, and recordings.</p>
+          <p>You can see exactly what was said, what was captured, and what was escalated. Nothing disappears into a black hole.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Will this get better over time?</summary>
+        <div class="faq-answer">
+          <p>Yes. The platforms I build on are constantly improving. When the underlying technology improves, your agents benefit from it.</p>
+          <p>I also revisit setups constantly to make sure everything is still running well and to identify where the next opportunity is.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What software and platforms do you use?</summary>
+        <div class="faq-answer">
+          <p>I use purpose-built AI voice and messaging platforms combined with the tools your business already runs on — whatever CRM, booking system, or calendar you're using.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How much does it cost?</summary>
+        <div class="faq-answer">
+          <p>Depends on the setup. Single-agent entry starts at $500/mth.</p>
+          <p>Most businesses land somewhere in the $1,000–$2,500/month range depending on how many agents are running and the level of support involved.</p>
+          <p>There's also a one-off setup fee. Happy to run through specific numbers once I understand what you actually need.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is there a contract?</summary>
+        <div class="faq-answer">
+          <p>No contracts. If it's not working for your business, you're not stuck.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What's involved in getting set up?</summary>
+        <div class="faq-answer">
+          <p>An hour of your time, maybe less. I ask you questions about your business, gather the information the agents need, and handle the build from there.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Can I see it working before we go live?</summary>
+        <div class="faq-answer">
+          <p>Yes. Before turning it on, we'll demo the agent live for you and test it against some real scenarios.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How long does setup take?</summary>
+        <div class="faq-answer">
+          <p>Typically one to two weeks from our first conversation to going live, depending on complexity and how quickly I can get the information I need from you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Do you only work with businesses in Coffs Harbour?</summary>
+        <div class="faq-answer">
+          <p>That's where I'm based, but the majority of the work is done remotely so geography isn't really a constraint.</p>
+          <p>If you're outside the area and the fit is right, I'm happy to talk.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How many businesses do you take on at a time?</summary>
+        <div class="faq-answer">
+          <p>I limit new setups to keep the quality of each build high.</p>
+          <p>If you're interested, it's worth having a conversation sooner rather than later.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
@@ -1315,6 +1585,7 @@
   <ul class="nav-drawer-links">
     <li><a href="/#services">Services</a></li>
     <li><a href="#demo">Free Demo</a></li>
+    <li><a href="#faq">Voice Agent FAQ</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
