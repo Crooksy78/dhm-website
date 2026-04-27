@@ -771,9 +771,9 @@
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 520px;
+    max-width: 280px;
     margin: 0 auto;
   }
 
@@ -1559,11 +1559,7 @@
     <div class="contact-grid">
       <div class="contact-card">
         <div class="label">Email</div>
-        <a href="mailto:craig@darkhorse.marketing">craig@darkhorse.marketing</a>
-      </div>
-      <div class="contact-card">
-        <div class="label">Phone</div>
-        <a href="tel:+61422464450">0422 464 450</a>
+        <a id="contact-email" href="#">craig&#8203;@&#8203;darkhorse&#8203;.&#8203;marketing</a>
       </div>
     </div>
   </div>
@@ -1635,5 +1631,13 @@
 })();
 </script>
 
+<script>
+(function() {
+  var u = 'craig';
+  var d = 'darkhorse' + '.' + 'marketing';
+  var el = document.getElementById('contact-email');
+  if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
+})();
+</script>
 </body>
 </html>
