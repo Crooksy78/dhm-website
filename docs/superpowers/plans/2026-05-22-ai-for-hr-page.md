@@ -1,0 +1,1197 @@
+# AI for HR Landing Page Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Build `Website/ai-for-hr/index.html` — a credibility landing page for HR prospects, matching the DHM design system.
+
+**Architecture:** Single self-contained HTML file with inline CSS and vanilla JS. Follows the same pattern as `Website/voice-agents/index.html` — all styles in a `<style>` block, no external CSS. Page sections alternate dark (`#111111`) and light (`#fafaf8`) backgrounds.
+
+**Tech Stack:** HTML5, inline CSS (CSS custom properties), vanilla JS. Google Fonts (Plus Jakarta Sans + JetBrains Mono) loaded via CDN link in head.
+
+---
+
+## File Structure
+
+- **Create:** `Website/ai-for-hr/index.html` — the complete page (built incrementally across tasks)
+
+---
+
+## Task 1: File scaffold — head, all CSS, nav
+
+**Files:**
+- Create: `Website/ai-for-hr/index.html`
+
+- [ ] **Step 1: Create the file with head, full CSS, and nav HTML**
+
+Create `Website/ai-for-hr/index.html` with the following content:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for HR Teams | Dark Horse Marketing</title>
+<meta name="description" content="Practical guidance on using AI in HR — what works, what to avoid, and how to keep your data safe. Dark Horse Marketing, Coffs Harbour.">
+
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fafaf8;
+    --bg-white: #ffffff;
+    --bg-dark: #111111;
+    --ink: #1a1a1a;
+    --ink-mid: #2e2e2e;
+    --ink-muted: #555555;
+    --ink-light: #888888;
+    --accent: #4f6df5;
+    --accent-light: #eef1fe;
+    --accent-hover: #3d5be0;
+    --border: #e2e0db;
+    --border-light: #eeece8;
+    --feat-purple: #7c5cbf;
+    --feat-purple-light: #f3effb;
+    --feat-teal: #0d9488;
+    --feat-teal-light: #e6f5f3;
+    --feat-orange: #d96a3b;
+    --feat-orange-light: #fdf0ea;
+    --feat-rose: #d94f7a;
+    --feat-rose-light: #fdeef3;
+    --feat-amber: #b8860b;
+    --feat-amber-light: #fdf5e6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--bg-dark);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: #ffffff; }
+
+  /* HERO (dark bg) */
+  .hero-dark {
+    background: var(--bg-dark);
+    padding: 88px 0 80px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 7px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+  }
+
+  .hero-dark h1 {
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    max-width: 640px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-cta:hover { background: var(--accent); color: #ffffff; }
+
+  /* STATS (dark bg, flows from hero) */
+  .stats-section {
+    background: var(--bg-dark);
+    padding: 0 0 88px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .stats-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 48px;
+    padding-top: 80px;
+  }
+
+  .stats-header h2 {
+    font-weight: 800;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .stats-header p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .stats-callout {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    margin-top: 16px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 40px 24px;
+  }
+
+  .stat-num {
+    font-weight: 800;
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 1;
+    color: var(--feat-purple);
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-label {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .stat-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.04em;
+  }
+
+  /* USE CASES (light bg) */
+  .use-cases {
+    background: var(--bg);
+    padding: 88px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+  }
+
+  .section-header h2 {
+    font-weight: 800;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .use-case-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px;
+    transition: box-shadow 0.2s;
+  }
+
+  .use-case-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .use-case-card.uc-teal   { border-top-color: var(--feat-teal); }
+  .use-case-card.uc-orange { border-top-color: var(--feat-orange); }
+  .use-case-card.uc-purple { border-top-color: var(--feat-purple); }
+  .use-case-card.uc-blue   { border-top-color: var(--accent); }
+
+  .uc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .uc-icon.teal   { background: var(--feat-teal-light); }
+  .uc-icon.orange { background: var(--feat-orange-light); }
+  .uc-icon.purple { background: var(--feat-purple-light); }
+  .uc-icon.blue   { background: var(--accent-light); }
+
+  .use-case-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .use-case-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .use-case-card ul li {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .use-case-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-light);
+  }
+
+  /* DATA SAFETY (dark bg) */
+  .data-safety {
+    background: var(--bg-dark);
+    padding: 88px 0;
+  }
+
+  .data-safety .section-header h2 { color: #ffffff; }
+  .data-safety .section-header p  { color: rgba(255,255,255,0.55); }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .tier-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+
+  .tier-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .tier-name.rose  { color: var(--feat-rose); }
+  .tier-name.amber { color: var(--feat-amber); }
+  .tier-name.teal  { color: var(--feat-teal); }
+
+  .tier-price {
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 24px;
+  }
+
+  .tier-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tier-card ul li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .tier-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .tier-examples {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.5;
+  }
+
+  .data-warning {
+    background: rgba(184,134,11,0.1);
+    border: 1px solid rgba(184,134,11,0.25);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .data-warning strong { color: var(--feat-amber); }
+
+  /* AI POLICY (light bg) */
+  .ai-policy {
+    background: var(--bg);
+    padding: 88px 0;
+  }
+
+  .policy-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .policy-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .policy-item:first-child { border-top: 1px solid var(--border); }
+
+  .policy-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .policy-text h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .policy-text p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* CTA SECTION (dark bg) */
+  .cta-section {
+    background: var(--bg-dark);
+    padding: 96px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .cta-section .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .cta-section h2 {
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 18px;
+  }
+
+  .cta-section > .container > p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: inline-block;
+    min-width: 280px;
+  }
+
+  .contact-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+
+  .contact-card a {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-card a:hover { color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 0;
+    background: var(--bg-dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* MOBILE NAV */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+  .nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-dark);
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .nav-drawer.is-open { transform: translateX(0); }
+
+  .nav-drawer-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .nav-drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-close:hover { color: #ffffff; }
+
+  .nav-drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-drawer-links li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-drawer-links li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+  .nav-drawer-links a {
+    display: block;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-links a:hover { color: #ffffff; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge  { animation: fadeUp 0.7s ease 0.1s both; }
+  .hero-dark h1 { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-sub    { animation: fadeUp 0.8s ease 0.35s both; }
+  .hero-cta    { animation: fadeUp 0.8s ease 0.5s both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero-dark { padding: 64px 0 56px; }
+    .hero-sub { font-size: 17px; }
+    .stats-section { padding: 0 0 64px; }
+    .stats-header { padding-top: 56px; }
+    .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+    .stat-card { padding: 28px 20px; }
+    .use-cases { padding: 64px 0; }
+    .use-cases-grid { grid-template-columns: 1fr; }
+    .data-safety { padding: 64px 0; }
+    .tier-grid { grid-template-columns: 1fr; }
+    .ai-policy { padding: 64px 0; }
+    .cta-section { padding: 72px 0; }
+    .contact-card { min-width: unset; width: 100%; max-width: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a href="https://darkhorse.marketing/" class="logo">Dark Horse Marketing<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="https://darkhorse.marketing/#services">Services</a></li>
+      <li><a href="/voice-agents/#demo">Free Voice Agent Demo</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+</body>
+</html>
+```
+
+- [ ] **Step 2: Open in browser and verify nav renders correctly**
+
+Open `Website/ai-for-hr/index.html` in a browser (double-click or use Live Server in VS Code).
+
+Expected: Dark sticky nav with "Dark Horse Marketing." logo on left, three nav links on right. Page body is empty.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: scaffold AI for HR page — head, CSS, nav"
+```
+
+---
+
+## Task 2: Hero and Stats sections
+
+**Files:**
+- Modify: `Website/ai-for-hr/index.html` — add hero and stats HTML inside `<body>`, before `</body>`
+
+- [ ] **Step 1: Add hero and stats HTML**
+
+Replace `</body>` with the following, then close with `</body>`:
+
+```html
+<!-- HERO -->
+<section class="hero-dark">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge">AI for HR Professionals</div>
+      <h1>Your Team Is Already Using AI.<br>Let's Make Sure They're Doing It Right.</h1>
+      <p class="hero-sub">Practical guidance on the AI tools making a real difference in HR — and the guardrails every team should have before they go all-in.</p>
+      <a href="#contact" class="hero-cta">
+        Get in Touch
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-header">
+      <h2>AI Is Already in Your Organisation</h2>
+      <p>Research shows 46% of organisations now use AI in HR. But the reality on the ground is messier — 88% of employees are already using some form of AI at work, and 80% of them are using tools their employer hasn't approved.</p>
+      <p class="stats-callout">The question isn't whether your team is using AI. It's whether they're doing it safely.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">46%</div>
+        <div class="stat-label">of organisations use AI in HR</div>
+        <div class="stat-source">SHRM, 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">80%</div>
+        <div class="stat-label">of workers use unapproved AI tools</div>
+        <div class="stat-source">UpGuard / HR Dive</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">77%</div>
+        <div class="stat-label">have pasted sensitive data into AI</div>
+        <div class="stat-source">LayerX Research</div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+Expected: Dark hero with frosted pill badge, large white H1, muted subhead, white "Get in Touch" button with arrow. Below it, stats section continues on dark bg with 3 purple-number stat cards. All fadeUp animations fire on page load.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: add hero and stats sections to AI for HR page"
+```
+
+---
+
+## Task 3: Use Cases section
+
+**Files:**
+- Modify: `Website/ai-for-hr/index.html` — add use cases HTML before `</body>`
+
+- [ ] **Step 1: Add use cases HTML**
+
+Insert before `</body>`:
+
+```html
+<!-- USE CASES -->
+<section class="use-cases">
+  <div class="container">
+    <div class="section-header">
+      <h2>Practical Use Cases</h2>
+      <p>AI won't replace HR. But it will save you hours on the work you're already doing.</p>
+    </div>
+    <div class="use-cases-grid">
+
+      <div class="use-case-card uc-teal">
+        <div class="uc-icon teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Communication &amp; Documentation</h3>
+        <ul>
+          <li>Rewrite difficult emails with the right tone</li>
+          <li>Turn rough notes into professional memos</li>
+          <li>Draft disciplinary documentation (anonymised)</li>
+        </ul>
+      </div>
+
+      <div class="use-case-card uc-orange">
+        <div class="uc-icon orange">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Training &amp; Onboarding</h3>
+        <ul>
+          <li>Generate 90-day onboarding checklists by role</li>
+          <li>Create training outlines and quiz questions</li>
+          <li>Practice difficult conversations with AI role-play</li>
+        </ul>
+      </div>
+
+      <div class="use-case-card uc-purple">
+        <div class="uc-icon purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Recruiting &amp; Job Descriptions</h3>
+        <ul>
+          <li>Draft and refine job descriptions in seconds</li>
+          <li>Flag biased language automatically</li>
+          <li>Generate role-specific interview questions</li>
+        </ul>
+      </div>
+
+      <div class="use-case-card uc-blue">
+        <div class="uc-icon blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Policy Research &amp; Compliance</h3>
+        <ul>
+          <li>Use AI to summarise legislation and regulations with citations</li>
+          <li>Research Fair Work Act obligations faster</li>
+          <li>Start at 80% instead of starting from zero</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+Expected: Light background section. 2×2 grid of white cards, each with a coloured top accent line (teal, orange, purple, blue), coloured icon square, bold h3, and 3 bullet points. Cards lift on hover.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: add use cases section to AI for HR page"
+```
+
+---
+
+## Task 4: Data Safety section
+
+**Files:**
+- Modify: `Website/ai-for-hr/index.html` — add data safety HTML before `</body>`
+
+- [ ] **Step 1: Add data safety HTML**
+
+Insert before `</body>`:
+
+```html
+<!-- DATA SAFETY -->
+<section class="data-safety">
+  <div class="container">
+    <div class="section-header">
+      <h2>Where Is Your Data Safe?</h2>
+      <p>Not all AI plans are equal. The tier you choose determines how your data is protected.</p>
+    </div>
+    <div class="tier-grid">
+
+      <div class="tier-card">
+        <div class="tier-name rose">Free &amp; Individual</div>
+        <div class="tier-price">$0–20/mo</div>
+        <ul>
+          <li>Data may be used for model training</li>
+          <li>Human reviewers may see your input</li>
+          <li>Consumer terms of service only</li>
+        </ul>
+        <div class="tier-examples">ChatGPT Free/Plus, Gemini Free/Advanced, Claude Free/Pro</div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name amber">Team / Business</div>
+        <div class="tier-price">$25–30/user/mo</div>
+        <ul>
+          <li>Data NOT used for training</li>
+          <li>Business data protections and admin controls</li>
+          <li>SOC 2 compliance</li>
+        </ul>
+        <div class="tier-examples">ChatGPT Team, Claude Team, M365 Copilot, Workspace Gemini</div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name teal">Enterprise</div>
+        <div class="tier-price">Custom pricing</div>
+        <ul>
+          <li>Contractual data guarantees</li>
+          <li>Custom retention, SSO, audit logs</li>
+          <li>Australian Privacy Act compliance</li>
+        </ul>
+        <div class="tier-examples">ChatGPT Enterprise, Claude Enterprise, Vertex AI</div>
+      </div>
+
+    </div>
+    <div class="data-warning">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--feat-amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span><strong>The minimum for sensitive employee data:</strong> Team/Business tier at $25+/user/month.</span>
+    </div>
+  </div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+Expected: Dark section with 3 tier cards side-by-side. Tier names in rose, amber, teal. Bullet lists in muted white. Amber warning banner full-width at the bottom with triangle icon.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: add data safety section to AI for HR page"
+```
+
+---
+
+## Task 5: AI Policy section
+
+**Files:**
+- Modify: `Website/ai-for-hr/index.html` — add policy HTML before `</body>`
+
+- [ ] **Step 1: Add AI policy HTML**
+
+Insert before `</body>`:
+
+```html
+<!-- AI POLICY -->
+<section class="ai-policy">
+  <div class="container">
+    <div class="section-header">
+      <h2>Your AI Policy Can Start on One Page</h2>
+      <p>You don't need a 20-page governance document. Cover these five things.</p>
+    </div>
+    <div class="policy-list">
+
+      <div class="policy-item">
+        <div class="policy-icon">01</div>
+        <div class="policy-text">
+          <h3>Approved Tools</h3>
+          <p>Which AI tools are allowed? Which are not?</p>
+        </div>
+      </div>
+
+      <div class="policy-item">
+        <div class="policy-icon">02</div>
+        <div class="policy-text">
+          <h3>Prohibited Data</h3>
+          <p>What can never go into an AI tool? (personal information, employment records, legal matters)</p>
+        </div>
+      </div>
+
+      <div class="policy-item">
+        <div class="policy-icon">03</div>
+        <div class="policy-text">
+          <h3>Required Review</h3>
+          <p>All AI output must be reviewed by a human before use.</p>
+        </div>
+      </div>
+
+      <div class="policy-item">
+        <div class="policy-icon">04</div>
+        <div class="policy-text">
+          <h3>Documentation</h3>
+          <p>When AI is used for decisions, it should be noted.</p>
+        </div>
+      </div>
+
+      <div class="policy-item">
+        <div class="policy-icon">05</div>
+        <div class="policy-text">
+          <h3>Transparency</h3>
+          <p>Employees should know when AI was used in processes that affect them.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+Expected: Light background. Centred heading. 5 full-width rows separated by light borders — each has a blue numbered square on the left, bold h3, and a one-line description. Clean, readable, evenly spaced.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: add AI policy section to AI for HR page"
+```
+
+---
+
+## Task 6: CTA, footer, mobile nav drawer, and JS
+
+**Files:**
+- Modify: `Website/ai-for-hr/index.html` — complete the page before `</body>`
+
+- [ ] **Step 1: Add CTA section, footer, mobile nav drawer, and JS**
+
+Insert before `</body>`:
+
+```html
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <span class="section-tag">Get In Touch</span>
+    <h2>Let's Talk About What This Looks Like for Your Team</h2>
+    <p>Already thinking about AI for your HR function? I work with businesses across Australia to make it practical, safe, and actually useful.</p>
+    <div class="contact-card">
+      <div class="label">Email</div>
+      <a id="contact-email" href="#">craig&#8203;@&#8203;darkhorse&#8203;.&#8203;marketing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">© 2026 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
+</footer>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <div class="nav-drawer-header">
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <ul class="nav-drawer-links">
+    <li><a href="https://darkhorse.marketing/#services">Services</a></li>
+    <li><a href="/voice-agents/#demo">Free Voice Agent Demo</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var backdrop = document.getElementById('navBackdrop');
+  var close = document.getElementById('navClose');
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    toggle.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', function() {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  close.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+
+  drawer.querySelectorAll('.nav-drawer-links a').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var u = 'craig';
+  var d = 'darkhorse' + '.' + 'marketing';
+  var el = document.getElementById('contact-email');
+  if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
+})();
+</script>
+```
+
+- [ ] **Step 2: Verify full page in browser**
+
+Expected:
+- Dark CTA section: "Get In Touch" mono tag, large H1, muted body text, frosted glass contact card with email address
+- Footer: dark, muted copyright line
+- Resize to mobile (< 768px): hamburger appears, nav links hide, tap hamburger opens slide-in drawer, tap backdrop or X closes it, "Contact" link scrolls to CTA section and closes drawer
+- Email address renders correctly as `craig@darkhorse.marketing` (assembled by JS, not hardcoded)
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add Website/ai-for-hr/index.html
+git commit -m "feat: complete AI for HR page — CTA, footer, mobile nav, JS"
+```
+
+---
+
+## Task 7: Cross-browser check and push
+
+**Files:**
+- No file changes expected — verification only
+
+- [ ] **Step 1: Full visual walk-through**
+
+Open `Website/ai-for-hr/index.html` in browser and scroll top to bottom. Check each section:
+
+| Section | Check |
+|---------|-------|
+| Nav | Sticky, dark, logo and links visible |
+| Hero | Dark bg, badge, H1, subhead, white CTA button |
+| Stats | 3 purple-number cards on dark bg, callout line |
+| Use Cases | 2×2 white cards, coloured top lines, bullet dots |
+| Data Safety | 3 dark tier cards (rose/amber/teal titles), amber warning banner |
+| AI Policy | 5 numbered rows on light bg, bordered list |
+| CTA | Dark section, contact card, email renders via JS |
+| Footer | Dark, copyright |
+
+- [ ] **Step 2: Mobile check (DevTools)**
+
+In Chrome DevTools, set viewport to 375px wide. Verify:
+- All sections stack to single column
+- No horizontal overflow
+- Hamburger visible and functional
+- Text remains readable at all breakpoints
+
+- [ ] **Step 3: Confirm with Craig, then push**
+
+Per `CLAUDE.md` deployment rules — do not push without confirmation. Ask:
+
+> "Happy with the AI for HR page? I can commit and push to deploy to the live site at darkhorse.marketing/ai-for-hr/."
+
+Once confirmed:
+
+```bash
+git push
+```
+
+Expected: GitHub Actions deploys within ~60 seconds. Verify live at `https://darkhorse.marketing/ai-for-hr/`.
