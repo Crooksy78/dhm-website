@@ -99,15 +99,11 @@
 
   .nav-links a:hover { color: #ffffff; }
 
-  /* HERO (dark bg) */
-  .hero-dark {
-    background: var(--bg-dark);
-    padding: 88px 0 80px;
+  /* HERO */
+  .hero {
+    padding: 96px 0 80px;
     text-align: center;
-  }
-
-  .hero-inner {
-    max-width: 820px;
+    max-width: 880px;
     margin: 0 auto;
   }
 
@@ -115,58 +111,37 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 16px;
     border-radius: 100px;
     margin-bottom: 32px;
   }
 
-  .hero-dark h1 {
+  .hero h1 {
     font-weight: 800;
     font-size: clamp(36px, 5vw, 60px);
     line-height: 1.1;
     letter-spacing: -0.03em;
-    color: #ffffff;
+    color: var(--ink);
     margin-bottom: 24px;
   }
 
   .hero-sub {
     font-size: 19px;
     line-height: 1.65;
-    color: rgba(255,255,255,0.55);
+    color: var(--ink-muted);
     max-width: 640px;
     margin: 0 auto 40px;
   }
 
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    color: var(--ink);
-    font-size: 16px;
-    font-weight: 700;
-    padding: 14px 32px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    letter-spacing: -0.01em;
-  }
-
-  .hero-cta:hover { background: var(--accent); color: #ffffff; }
 
   /* STATS (dark bg, flows from hero) */
   .stats-section {
     background: var(--bg-dark);
     padding: 0 0 88px;
-    border-top: 1px solid rgba(255,255,255,0.07);
   }
 
   .stats-header {
@@ -217,10 +192,13 @@
     font-weight: 800;
     font-size: clamp(44px, 5vw, 64px);
     line-height: 1;
-    color: var(--feat-purple);
     margin-bottom: 12px;
     letter-spacing: -0.03em;
   }
+
+  .stat-card:nth-child(1) .stat-num { color: var(--feat-teal); }
+  .stat-card:nth-child(2) .stat-num { color: var(--feat-orange); }
+  .stat-card:nth-child(3) .stat-num { color: var(--feat-rose); }
 
   .stat-label {
     font-size: 15px;
@@ -354,18 +332,32 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
     padding: 32px 28px;
+    text-align: center;
+  }
+
+  .tier-card ul { text-align: left; }
+
+  .tier-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
   }
 
   .tier-name {
     font-size: 20px;
     font-weight: 800;
+    color: #ffffff;
     margin-bottom: 6px;
     letter-spacing: -0.02em;
   }
 
-  .tier-name.rose  { color: var(--feat-rose); }
-  .tier-name.amber { color: var(--feat-amber); }
-  .tier-name.teal  { color: var(--feat-teal); }
+  .tier-card.tier-red   { border-color: rgba(239,68,68,0.25); }
+  .tier-card.tier-amber { border-color: rgba(245,158,11,0.25); }
+  .tier-card.tier-green { border-color: rgba(16,185,129,0.25); }
+
+  .tier-card.tier-red   ul li::before { background: rgba(239,68,68,0.55); }
+  .tier-card.tier-amber ul li::before { background: rgba(245,158,11,0.55); }
+  .tier-card.tier-green ul li::before { background: rgba(16,185,129,0.55); }
 
   .tier-price {
     font-size: 14px;
@@ -427,48 +419,131 @@
     padding: 88px 0;
   }
 
-  .policy-list {
-    max-width: 800px;
+  /* OPTION A — CHECKLIST */
+  .checklist {
+    max-width: 680px;
     margin: 0 auto;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
-  .policy-item {
+  .checklist-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 18px;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border-light);
   }
 
-  .policy-item:first-child { border-top: 1px solid var(--border); }
+  .checklist-item:last-child { border-bottom: none; }
 
-  .policy-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: var(--accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent);
-  }
+  .checklist-check { flex-shrink: 0; margin-top: 1px; }
 
-  .policy-text h3 {
-    font-size: 17px;
+  .checklist-text h3 {
+    font-size: 16px;
     font-weight: 700;
     color: var(--ink);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     letter-spacing: -0.01em;
   }
 
-  .policy-text p {
-    font-size: 15px;
+  .checklist-text p {
+    font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.5;
+    margin: 0;
+  }
+
+  /* OPTION D — DOCUMENT MOCKUP */
+  .policy-doc {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .policy-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    border-bottom: 2px solid var(--border);
+    background: var(--bg);
+  }
+
+  .policy-doc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .policy-doc-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .policy-doc-body { padding: 8px 0; }
+
+  .policy-clause {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .policy-clause:last-child { border-bottom: none; }
+
+  .policy-clause-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  .policy-clause-content h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+
+  .policy-clause-content p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .policy-doc-footer {
+    padding: 14px 28px;
+    border-top: 2px solid var(--border);
+    background: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .policy-doc-footer span {
+    font-size: 11px;
+    color: var(--ink-light);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
   }
 
   /* CTA SECTION (dark bg) */
@@ -649,17 +724,16 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-badge  { animation: fadeUp 0.7s ease 0.1s both; }
-  .hero-dark h1 { animation: fadeUp 0.8s ease 0.2s both; }
-  .hero-sub    { animation: fadeUp 0.8s ease 0.35s both; }
-  .hero-cta    { animation: fadeUp 0.8s ease 0.5s both; }
+  .hero-badge { animation: fadeUp 0.7s ease 0.1s both; }
+  .hero h1    { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-sub   { animation: fadeUp 0.8s ease 0.35s both; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .container { padding: 0 24px; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
-    .hero-dark { padding: 64px 0 56px; }
+    .hero { padding: 64px 0 56px; }
     .hero-sub { font-size: 17px; }
     .stats-section { padding: 0 0 64px; }
     .stats-header { padding-top: 56px; }
@@ -693,26 +767,18 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-dark">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-badge">AI for HR Professionals</div>
-      <h1>Your Team Is Already Using AI.<br>Let's Make Sure They're Doing It Right.</h1>
-      <p class="hero-sub">Practical guidance on the AI tools making a real difference in HR — and the guardrails every team should have before they go all-in.</p>
-      <a href="#contact" class="hero-cta">
-        Get in Touch
-        <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-  </div>
+<section class="hero container">
+  <div class="hero-badge">AI for HR Professionals</div>
+  <h1>Your Team Is Already Using AI.<br>Time to Get Across It.</h1>
+  <p class="hero-sub">What's actually working for HR teams right now — and what every team needs to sort out before going all-in.</p>
 </section>
 
 <!-- STATS -->
 <section class="stats-section">
   <div class="container">
     <div class="stats-header">
-      <h2>AI Is Already in Your Organisation</h2>
-      <p>Research shows 46% of organisations now use AI in HR. But the reality on the ground is messier — 88% of employees are already using some form of AI at work, and 80% of them are using tools their employer hasn't approved.</p>
+      <h2>The Gap Between Policy and Practice</h2>
+      <p>Research shows 46% of organisations now use AI in HR. But what's happening on the ground tells a different story — 88% of employees are already using some form of AI at work, and 80% of them are using tools their employer hasn't approved.</p>
       <p class="stats-callout">The question isn't whether your team is using AI. It's whether they're doing it safely.</p>
     </div>
     <div class="stats-grid">
@@ -739,8 +805,8 @@
 <section class="use-cases">
   <div class="container">
     <div class="section-header">
-      <h2>Practical Use Cases</h2>
-      <p>AI won't replace HR. But it will save you hours on the work you're already doing.</p>
+      <h2>What HR Teams Are Actually Doing With AI</h2>
+      <p>Not hype. Just faster, cleaner work on tasks you're already doing every day.</p>
     </div>
     <div class="use-cases-grid">
 
@@ -750,9 +816,9 @@
         </div>
         <h3>Communication &amp; Documentation</h3>
         <ul>
-          <li>Rewrite difficult emails with the right tone</li>
-          <li>Turn rough notes into professional memos</li>
-          <li>Draft disciplinary documentation (anonymised)</li>
+          <li>Get difficult emails right the first time</li>
+          <li>Turn rough notes into polished memos</li>
+          <li>Draft disciplinary documentation without the hours</li>
         </ul>
       </div>
 
@@ -762,9 +828,9 @@
         </div>
         <h3>Training &amp; Onboarding</h3>
         <ul>
-          <li>Generate 90-day onboarding checklists by role</li>
-          <li>Create training outlines and quiz questions</li>
-          <li>Practise difficult conversations with AI role-play</li>
+          <li>Build role-specific 90-day onboarding plans quickly</li>
+          <li>Create training content and quiz questions in minutes</li>
+          <li>Give managers a safe space to practise difficult conversations</li>
         </ul>
       </div>
 
@@ -774,9 +840,9 @@
         </div>
         <h3>Recruiting &amp; Job Descriptions</h3>
         <ul>
-          <li>Draft and refine job descriptions in seconds</li>
-          <li>Flag biased language automatically</li>
-          <li>Generate role-specific interview questions</li>
+          <li>Get a solid first draft of any job description in minutes</li>
+          <li>Spot biased language before it goes live</li>
+          <li>Generate interview questions tailored to the role</li>
         </ul>
       </div>
 
@@ -786,9 +852,9 @@
         </div>
         <h3>Policy Research &amp; Compliance</h3>
         <ul>
-          <li>Use AI to summarise legislation and regulations with citations</li>
-          <li>Research Fair Work Act obligations faster</li>
-          <li>Start at 80% instead of starting from zero</li>
+          <li>Summarise Fair Work Act obligations in plain language</li>
+          <li>Get to 80% on any research task without starting from scratch</li>
+          <li>Always verify with your legal team — but start much faster</li>
         </ul>
       </div>
 
@@ -800,48 +866,76 @@
 <section class="data-safety">
   <div class="container">
     <div class="section-header">
-      <h2>Where Is Your Data Safe?</h2>
-      <p>Not all AI plans are equal. The tier you choose determines how your data is protected.</p>
+      <h2>Your Data Protection Depends on Your Plan</h2>
+      <p>The subscription tier you choose determines what happens to everything you put in. Most teams don't realise there's a meaningful difference.</p>
     </div>
     <div class="tier-grid">
 
-      <div class="tier-card">
-        <div class="tier-name rose">Free &amp; Individual</div>
+      <div class="tier-card tier-red">
+        <div class="tier-icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="22" cy="22" r="22" fill="rgba(239,68,68,0.12)"/>
+            <circle cx="22" cy="22" r="16" fill="rgba(239,68,68,0.18)"/>
+            <line x1="15" y1="15" x2="29" y2="29" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="29" y1="15" x2="15" y2="29" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tier-name">Free &amp; Individual</div>
         <div class="tier-price">$0–20/mo</div>
         <ul>
-          <li>Data may be used for model training</li>
-          <li>Human reviewers may see your input</li>
-          <li>Consumer terms of service only</li>
+          <li>Your input may be used to train the model</li>
+          <li>Platform staff can review your conversations</li>
+          <li>Consumer terms of service only — not business-grade</li>
         </ul>
         <div class="tier-examples">ChatGPT Free/Plus, Gemini Free/Advanced, Claude Free/Pro</div>
       </div>
 
-      <div class="tier-card">
-        <div class="tier-name amber">Team / Business</div>
+      <div class="tier-card tier-amber">
+        <div class="tier-icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="22" cy="22" r="22" fill="rgba(245,158,11,0.12)"/>
+            <circle cx="22" cy="22" r="16" fill="rgba(245,158,11,0.18)"/>
+            <line x1="22" y1="13" x2="22" y2="24" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="22" cy="30" r="1.75" fill="#f59e0b"/>
+          </svg>
+        </div>
+        <div class="tier-name">Team / Business</div>
         <div class="tier-price">$25–30/user/mo</div>
         <ul>
-          <li>Data NOT used for training</li>
-          <li>Business data protections and admin controls</li>
-          <li>SOC 2 compliance</li>
+          <li>Your data is not used to train the model</li>
+          <li>Business-grade admin controls and data protection</li>
+          <li>SOC 2 certified</li>
         </ul>
         <div class="tier-examples">ChatGPT Team, Claude Team, M365 Copilot, Workspace Gemini</div>
       </div>
 
-      <div class="tier-card">
-        <div class="tier-name teal">Enterprise</div>
+      <div class="tier-card tier-green">
+        <div class="tier-icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="22" cy="22" r="22" fill="rgba(16,185,129,0.12)"/>
+            <circle cx="22" cy="22" r="16" fill="rgba(16,185,129,0.18)"/>
+            <polyline points="14,22 20,28 30,15" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="tier-name">Enterprise</div>
         <div class="tier-price">Custom pricing</div>
         <ul>
-          <li>Contractual data guarantees</li>
-          <li>Custom retention, SSO, audit logs</li>
-          <li>Australian Privacy Act compliance</li>
+          <li>Written contractual data guarantees</li>
+          <li>Custom data retention, SSO, and audit logs</li>
+          <li>Supports Australian Privacy Act compliance</li>
         </ul>
         <div class="tier-examples">ChatGPT Enterprise, Claude Enterprise, Vertex AI</div>
       </div>
 
     </div>
     <div class="data-warning">
-      <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--feat-amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <span><strong>The minimum for sensitive employee data:</strong> Team/Business tier at $25+/user/month.</span>
+      <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 44 44" fill="none" style="flex-shrink:0">
+        <circle cx="22" cy="22" r="22" fill="rgba(245,158,11,0.12)"/>
+        <circle cx="22" cy="22" r="16" fill="rgba(245,158,11,0.18)"/>
+        <line x1="22" y1="13" x2="22" y2="24" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="22" cy="30" r="1.75" fill="#f59e0b"/>
+      </svg>
+      <span><strong>Minimum standard for sensitive employee data:</strong> Team/Business tier at $25+/user/month.</span>
     </div>
   </div>
 </section>
@@ -850,52 +944,78 @@
 <section class="ai-policy">
   <div class="container">
     <div class="section-header">
-      <h2>Your AI Policy Can Start on One Page</h2>
-      <p>You don't need a 20-page governance document. Cover these five things.</p>
+      <h2>An AI Policy Doesn't Have to Be Complicated</h2>
+      <p>One page covering these five things is a solid start. You can refine it from there.</p>
     </div>
-    <div class="policy-list">
+    <div class="checklist">
 
-      <div class="policy-item">
-        <div class="policy-icon">01</div>
-        <div class="policy-text">
+      <div class="checklist-item">
+        <div class="checklist-check">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <rect width="26" height="26" rx="7" fill="var(--accent-light)"/>
+            <polyline points="6,13 10.5,17.5 20,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="checklist-text">
           <h3>Approved Tools</h3>
-          <p>Which AI tools are allowed? Which are not?</p>
+          <p>Which tools are cleared for use, and which aren't?</p>
         </div>
       </div>
 
-      <div class="policy-item">
-        <div class="policy-icon">02</div>
-        <div class="policy-text">
-          <h3>Prohibited Data</h3>
-          <p>What can never go into an AI tool? (personal information, employment records, legal matters)</p>
+      <div class="checklist-item">
+        <div class="checklist-check">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <rect width="26" height="26" rx="7" fill="var(--accent-light)"/>
+            <polyline points="6,13 10.5,17.5 20,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="checklist-text">
+          <h3>Data Boundaries</h3>
+          <p>What can never go into an AI tool — personal information, employment records, legal matters.</p>
         </div>
       </div>
 
-      <div class="policy-item">
-        <div class="policy-icon">03</div>
-        <div class="policy-text">
-          <h3>Required Review</h3>
-          <p>All AI output must be reviewed by a human before use.</p>
+      <div class="checklist-item">
+        <div class="checklist-check">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <rect width="26" height="26" rx="7" fill="var(--accent-light)"/>
+            <polyline points="6,13 10.5,17.5 20,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="checklist-text">
+          <h3>Human Review</h3>
+          <p>All AI-generated content must be reviewed before it's used or sent.</p>
         </div>
       </div>
 
-      <div class="policy-item">
-        <div class="policy-icon">04</div>
-        <div class="policy-text">
-          <h3>Documentation</h3>
-          <p>When AI is used for decisions, it should be noted.</p>
+      <div class="checklist-item">
+        <div class="checklist-check">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <rect width="26" height="26" rx="7" fill="var(--accent-light)"/>
+            <polyline points="6,13 10.5,17.5 20,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="checklist-text">
+          <h3>Record Keeping</h3>
+          <p>Note when AI was used in any significant HR decision.</p>
         </div>
       </div>
 
-      <div class="policy-item">
-        <div class="policy-icon">05</div>
-        <div class="policy-text">
+      <div class="checklist-item">
+        <div class="checklist-check">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <rect width="26" height="26" rx="7" fill="var(--accent-light)"/>
+            <polyline points="6,13 10.5,17.5 20,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="checklist-text">
           <h3>Transparency</h3>
-          <p>Employees should know when AI was used in processes that affect them.</p>
+          <p>People have a right to know when AI played a role in decisions that affect them.</p>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -903,8 +1023,8 @@
 <section class="cta-section" id="contact">
   <div class="container">
     <span class="section-tag">Get In Touch</span>
-    <h2>Let's Talk About What This Looks Like for Your Team</h2>
-    <p>Already thinking about AI for your HR function? I work with businesses across Australia to make it practical, safe, and actually useful.</p>
+    <h2>Want to Talk Through What This Looks Like for Your Team?</h2>
+    <p>I help businesses across Australia work out what AI is actually worth using, what to avoid, and how to do it safely.</p>
     <div class="contact-card">
       <div class="label">Email</div>
       <a id="contact-email" href="#">craig&#8203;@&#8203;darkhorse&#8203;.&#8203;marketing</a>
