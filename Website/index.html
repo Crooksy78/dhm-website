@@ -438,6 +438,137 @@
     line-height: 1.5;
   }
 
+  /* AI STRATEGY CALL */
+  .strategy-call {
+    padding: 72px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .strategy-call-box {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 56px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .strategy-call-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .strategy-call-box h2 {
+    font-weight: 800;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .strategy-call-box h2 span {
+    color: var(--accent);
+  }
+
+  .strategy-call-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+
+  .strategy-call-block h3 {
+    font-weight: 800;
+    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .strategy-call-block p {
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .strategy-call-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .strategy-call-bullets li {
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .strategy-call-bullets li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .strategy-call-emphasis {
+    font-weight: 600;
+    color: var(--ink) !important;
+  }
+
+  .strategy-call-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .strategy-call { padding: 56px 0; }
+    .strategy-call-box { padding: 32px 28px; }
+    .strategy-call-content { grid-template-columns: 1fr; gap: 28px; }
+  }
+
   /* CONTACT */
   .contact {
     padding: 72px 0;
@@ -831,6 +962,40 @@
         </span>
       </a>
 
+    </div>
+  </div>
+</section>
+
+<!-- AI STRATEGY CALL -->
+<section class="strategy-call" id="strategy-call">
+  <div class="container">
+    <div class="strategy-call-box">
+      <h2>Book a Free <span>AI Strategy Call</span></h2>
+      <div class="strategy-call-content">
+        <div class="strategy-call-block">
+          <h3>What is it?</h3>
+          <p>A 20-minute look at your current AI setup and what a more advanced system could do for your marketing team. We'll cover what tools you're using, how your team is using them, and what's missing.</p>
+          <p>Then we'll show you what's actually possible:</p>
+          <ul class="strategy-call-bullets">
+            <li>What a Brand OS is and why it changes the quality of everything your team produces</li>
+            <li>What Claude Code and Claude Cowork unlock that most teams haven't accessed yet</li>
+            <li>What a realistic path forward looks like for your specific business</li>
+          </ul>
+        </div>
+        <div class="strategy-call-block">
+          <h3>Who is this for?</h3>
+          <p>Marketing teams that are using AI but know there's more to it than they're currently getting.</p>
+          <p>The tools are there, some prompts are working, but there's no real system behind it.</p>
+          <p>No consistent brand context, no documented workflows, nothing that would survive a staff change.</p>
+          <p class="strategy-call-emphasis">If that's where you are, this call is worth your time.</p>
+          <div class="strategy-call-footer">
+            <a href="#contact" class="btn-primary">
+              Book your free AI Strategy Call
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
