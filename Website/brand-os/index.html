@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand OS — A Permanent Foundation for Claude Cowork | Dark Horse Marketing</title>
+<meta name="description" content="A Brand Operating System gives Claude permanent knowledge of your business, your voice, and your customers — so every task your team runs starts brand-aware, automatically.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fafaf8;
+    --bg-white: #ffffff;
+    --bg-dark: #111111;
+    --ink: #1a1a1a;
+    --ink-mid: #2e2e2e;
+    --ink-muted: #555555;
+    --ink-light: #888888;
+    --accent: #4f6df5;
+    --accent-light: #eef1fe;
+    --accent-hover: #3d5be0;
+    --border: #e2e0db;
+    --border-light: #eeece8;
+    --feat-purple: #7c5cbf;
+    --feat-purple-light: #f3effb;
+    --feat-teal: #0d9488;
+    --feat-teal-light: #e6f5f3;
+    --feat-orange: #d96a3b;
+    --feat-orange-light: #fdf0ea;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--bg-dark);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: #ffffff; }
+
+  /* SECTION TAG */
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: block;
+    font-weight: 500;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 96px 0 80px;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-weight: 800;
+    font-size: clamp(38px, 5.5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .btn-secondary:hover { border-color: var(--ink-muted); transform: translateY(-1px); }
+
+  /* GENERIC SECTION */
+  .section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-white { background: var(--bg-white); }
+
+  .prose {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .prose h2 {
+    font-weight: 800;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .prose p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* THREE FILES */
+  .files-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 56px auto 0;
+  }
+
+  .file-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+  }
+
+  .file-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .file-card h3 {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .file-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+  }
+
+  /* WHAT CHANGES */
+  .changes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .changes-intro h2 {
+    font-weight: 800;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .changes-intro p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 14px;
+  }
+
+  .changes-intro p:last-child { margin-bottom: 0; }
+
+  .changes-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .change-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 22px;
+  }
+
+  .change-item h4 {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .change-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+
+  /* DIFFERENT FROM */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 680px;
+    margin: 32px auto 0;
+  }
+
+  .diff-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 26px;
+  }
+
+  .diff-card .diff-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .diff-card h3 {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .diff-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+  }
+
+  /* WHO IT'S FOR */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 32px auto 0;
+  }
+
+  .fit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fit-list li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .fit-list li:first-child { border-top: 1px solid var(--border-light); }
+
+  .fit-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .fit-label {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    display: block;
+    color: var(--ink);
+  }
+
+  /* HOW IT WORKS */
+  .process-list {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-light);
+    align-items: start;
+  }
+
+  .process-step:first-child { border-top: 1px solid var(--border-light); }
+
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-light);
+    padding-top: 3px;
+  }
+
+  .process-step h3 {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .process-step p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+  }
+
+  .process-footer {
+    max-width: 680px;
+    margin: 28px auto 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+  }
+
+  /* ALSO INCLUDED */
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 40px auto 0;
+  }
+
+  .included-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 26px;
+  }
+
+  .included-card .inc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .inc-purple { background: var(--feat-purple-light); }
+  .inc-teal   { background: var(--feat-teal-light); }
+  .inc-orange { background: var(--feat-orange-light); }
+  .inc-blue   { background: var(--accent-light); }
+
+  .included-card h3 {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .included-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+  }
+
+  /* PRICING */
+  .pricing-box {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 52px;
+    text-align: center;
+  }
+
+  .pricing-amount {
+    font-weight: 800;
+    font-size: clamp(52px, 7vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .pricing-note {
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .pricing-body {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+    margin-bottom: 36px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* GUARANTEE */
+  .guarantee-box {
+    max-width: 640px;
+    margin: 32px auto 0;
+    background: var(--feat-teal-light);
+    border: 1px solid #b2deda;
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .guarantee-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--feat-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .guarantee-body h3 {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .guarantee-body p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-mid);
+  }
+
+  /* ABOUT */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 64px;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .about-photo {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .about-body h2 {
+    font-weight: 800;
+    font-size: clamp(22px, 2.8vw, 30px);
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .about-body p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 14px;
+  }
+
+  .about-body p:last-child { margin-bottom: 0; }
+
+  /* FAQ */
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .faq-item:first-child { border-top: 1px solid var(--border-light); }
+
+  .faq-item h3 {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+  }
+
+  /* CLOSE CTA */
+  .close-section {
+    background: var(--bg-dark);
+    color: #ffffff;
+    padding: 96px 0;
+  }
+
+  .close-inner {
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .close-inner h2 {
+    font-weight: 800;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .close-inner p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 40px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .close-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .btn-primary-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 18px 36px;
+    border-radius: 14px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary-lg:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 32px;
+    border-radius: 14px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #ffffff; transform: translateY(-2px); }
+
+  .close-footnote {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 0;
+    background: var(--bg-dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* MOBILE NAV DRAWER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+  .nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-dark);
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .nav-drawer.is-open { transform: translateX(0); }
+
+  .nav-drawer-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .nav-drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-close:hover { color: #ffffff; }
+
+  .nav-drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-drawer-links li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-drawer-links li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+  .nav-drawer-links a {
+    display: block;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-drawer-links a:hover { color: #ffffff; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge { animation: fadeUp 0.7s ease 0.1s both; }
+  .hero h1   { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-sub  { animation: fadeUp 0.8s ease 0.35s both; }
+  .hero-ctas { animation: fadeUp 0.8s ease 0.5s both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .files-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .changes-grid { grid-template-columns: 1fr; gap: 36px; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .fit-grid { grid-template-columns: 1fr; }
+    .included-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .about-inner { grid-template-columns: 1fr; gap: 32px; }
+    .about-photo { max-width: 160px; }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { padding: 64px 0 56px; }
+    .section { padding: 56px 0; }
+    .pricing-box { padding: 36px 28px; }
+    .close-section { padding: 72px 0; }
+    .guarantee-box { flex-direction: column; gap: 16px; }
+  }
+
+  @media (max-width: 540px) {
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .pricing-ctas { flex-direction: column; align-items: center; }
+    .close-ctas { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary, .btn-primary-lg, .btn-ghost { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a href="https://darkhorse.marketing/" class="logo">Dark Horse Marketing<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="https://darkhorse.marketing/#services">Services</a></li>
+      <li><a href="https://darkhorse.marketing/#about">About</a></li>
+      <li><a href="https://darkhorse.marketing/#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="container">
+  <div class="hero">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/><path d="M5 17l.75 1.75L7.5 19.5l-1.75.75L5 22l-.75-1.75L2.5 19.5l1.75-.75L5 17z"/><path d="M19 14l.75 1.75L21.5 16.5l-1.75.75L19 19l-.75-1.75L16.5 16.5l1.75-.75L19 14z"/></svg>
+      Brand OS
+    </div>
+    <h1>The Brand Operating System</h1>
+    <p class="hero-sub">A permanent foundation layer for Claude Cowork. Everything Claude needs to know about your business — installed once, available to every task, every prompt, and every person on your team, automatically.</p>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn-primary">
+        Get your Brand OS — $750
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#" class="btn-secondary">Book a call first</a>
+    </div>
+  </div>
+</section>
+
+<!-- THREE FILES -->
+<section class="section section-white">
+  <div class="container">
+    <div class="prose" style="text-align:center;">
+      <span class="section-tag">What it is</span>
+      <h2>Three files. Everything Claude needs to know about your brand.</h2>
+      <p>The Brand OS is a set of three structured files that capture what your business does, how it communicates, and who it sells to. That knowledge lives inside your Claude workspace — read automatically before anything is produced.</p>
+    </div>
+    <div class="files-grid">
+      <div class="file-card">
+        <span class="file-card-label">brand-dna.md — The Business</span>
+        <h3>What the business is</h3>
+        <p>The factual brief: positioning, what makes the business different, hero products or services, the competitive landscape, proof points. Written the way you'd brief a new marketing hire on their first day.</p>
+      </div>
+      <div class="file-card">
+        <span class="file-card-label">brand-voice.md — The Voice</span>
+        <h3>How the brand actually sounds</h3>
+        <p>Captured from real patterns in real content. Not adjectives like "bold and confident." Sentence structures, rhythm, the words the brand uses, the words it never uses, and concrete before-and-after rewrites that show Claude what the voice looks like in practice.</p>
+      </div>
+      <div class="file-card">
+        <span class="file-card-label">icp-cards.md — The Customer</span>
+        <h3>The customer in their own language</h3>
+        <p>Built from real reviews, real conversations, and real research — not invented personas. Core pains, objections, buying triggers, and the phrases customers use to describe their own problems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CHANGES -->
+<section class="section">
+  <div class="container">
+    <div class="changes-grid">
+      <div class="changes-intro">
+        <span class="section-tag">What changes in practice</span>
+        <h2>The output stops drifting. The brand stays consistent.</h2>
+        <p>Without a Brand OS, every session starts cold. Claude fills the gaps with its own best guess — the average of everything it's ever seen, which is never quite your brand. The post written on Tuesday reads differently to the one from Monday. The new hire's work sounds different from the person who's been there two years.</p>
+        <p>Once the three files are in place, every person and every task starts from the same context. Consistency stops depending on who's at the keyboard.</p>
+        <p>It also gives your team back the hours they currently lose to editing first drafts into shape. When the first draft lands close, that time comes back — across a whole team, across every task.</p>
+        <p>And it compounds. A brand guidelines PDF is worth the same the day you file it as the day it goes stale. The Brand OS is the opposite: every Skill you run on it, every task it touches, makes the system more useful. It's an asset that appreciates.</p>
+      </div>
+      <div class="changes-aside">
+        <div class="change-item">
+          <h4>Consistent output across the team</h4>
+          <p>The post written Tuesday reads like the one from Monday. The new hire's work sounds like the work of someone who's been there two years.</p>
+        </div>
+        <div class="change-item">
+          <h4>Better first drafts</h4>
+          <p>When Claude starts brand-aware, the gap between first draft and usable output closes significantly. Less editing, less time spent putting the brand back in.</p>
+        </div>
+        <div class="change-item">
+          <h4>Brand knowledge that stays</h4>
+          <p>What currently lives in one person's head lives in the system instead. It holds when someone goes on leave, a contractor rolls off, or a new person comes in.</p>
+        </div>
+        <div class="change-item">
+          <h4>A system that compounds</h4>
+          <p>Every Skill you build on top of it extends its value. The Brand OS is the foundation — and foundations appreciate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT'S DIFFERENT -->
+<section class="section section-white">
+  <div class="container">
+    <div class="prose" style="text-align:center;">
+      <span class="section-tag">How this is different</span>
+      <h2>Not a prompt library. Not a guidelines PDF.</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <span class="diff-label">A prompt library</span>
+        <h3>Still requires manual context</h3>
+        <p>A prompt library still makes someone paste in brand context every time they use it. The output stays only as consistent as the person doing the pasting.</p>
+      </div>
+      <div class="diff-card">
+        <span class="diff-label">A brand guidelines PDF</span>
+        <h3>Written for people, not Claude</h3>
+        <p>A guidelines PDF is written for people to read. The AI never opens it. The Brand OS is written for Claude to read — and it reads it automatically, on every task.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <div class="container">
+    <div class="prose" style="text-align:center; margin-bottom: 0;">
+      <span class="section-tag">Who this is for</span>
+      <h2>Businesses that handle their own marketing and want more from the AI tools they're already using.</h2>
+    </div>
+    <div class="fit-grid">
+      <div>
+        <p style="font-weight:700; font-size:15px; color:var(--ink); margin-bottom:8px; text-align:center;">A strong fit if:</p>
+        <ul class="fit-list">
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Your marketing team is growing and you want consistent output across everyone, regardless of experience level</span>
+          </li>
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>You're bringing someone new into the marketing function and want them productive quickly</span>
+          </li>
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Your team uses Claude or ChatGPT regularly and you suspect there's better and more consistent output available than what you're getting</span>
+          </li>
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Your brand knowledge lives mostly in one person's head, and you'd rather it didn't</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:700; font-size:15px; color:var(--ink); margin-bottom:8px; text-align:center;">Probably not for you if:</p>
+        <ul class="fit-list">
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>You've already built and documented your own foundation files and are working in Claude Code or Cowork with a Skill library — you've effectively got a Brand OS already, whether or not you call it that</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-white">
+  <div class="container">
+    <div class="prose" style="text-align:center; margin-bottom: 48px;">
+      <span class="section-tag">How it works</span>
+      <h2>Three stages. The only real demand on your time is the first hour.</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <div>
+          <h3>Discovery session</h3>
+          <p>A structured interview — you answer questions about the business: your positioning, your customers, your voice, what makes you different. It takes around an hour and there's nothing to prepare. You just bring what you know about your business.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <div>
+          <h3>Research and build</h3>
+          <p>This is where the heavy lifting happens. Using your existing assets — website, ads, content, reviews — we research and build all three files. The voice is extracted from real content, not invented. The customer intelligence comes from real reviews and conversations, not made-up personas. Doing it properly takes several days, and it's the part that's hardest to do well yourself: it's the difference between three files anyone can rough out in an afternoon and three files built from real evidence.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <div>
+          <h3>Setup</h3>
+          <p>Once the files are complete, we install and configure everything in your Claude workspace, run test tasks against the Brand OS, and refine anything that doesn't feel right. You get a working system, not just files that are technically finished.</p>
+        </div>
+      </div>
+    </div>
+    <p class="process-footer">From the discovery session to a working system is about a week. The only real demand on your time is that first hour.</p>
+  </div>
+</section>
+
+<!-- ALSO INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div class="prose" style="text-align:center; margin-bottom: 0;">
+      <span class="section-tag">Also included</span>
+      <h2>Everything you need to start using the system straight away.</h2>
+    </div>
+    <div class="included-grid">
+      <div class="included-card">
+        <div class="inc-icon inc-purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Two custom Claude Skills</h3>
+        <p>Skills are what sit on top of the Brand OS to do specific jobs — and each one reads from your Brand OS automatically. We build two scoped to what your team actually does, so you can see how the foundation and Skills work together from day one.</p>
+      </div>
+      <div class="included-card">
+        <div class="inc-icon inc-teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>An anti-slop Skill</h3>
+        <p>Strips out the generic AI patterns — "unlock," "game-changer," safe filler — that creep into output even when the brand context is right. Your Brand OS teaches Claude what your voice is. This catches what it isn't. Run it as a final pass on anything before it goes out.</p>
+      </div>
+      <div class="included-card">
+        <div class="inc-icon inc-orange">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Build-your-own Skills resource</h3>
+        <p>The real power of your Brand OS comes from the Skills you build yourself, based on your own processes. We give you what you need to create your own — so the system keeps growing without relying on us.</p>
+      </div>
+      <div class="included-card">
+        <div class="inc-icon inc-blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </div>
+        <h3>A self-improving Skill</h3>
+        <p>Checks the output of your other Skills against their own rules and improves them over time. The system gets sharper the more you use it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-white" id="pricing">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 36px;">
+      <span class="section-tag">What it costs</span>
+    </div>
+    <div class="pricing-box">
+      <div class="pricing-amount">$750</div>
+      <p class="pricing-note">Introductory price — will rise as the offer is refined</p>
+      <p class="pricing-body">Covers the discovery session, the research and build of all three files, setup in your workspace, and everything listed above. This is also the foundation, not the finish line — most teams build on it from here, adding Skills and workflows as they find new uses for the system.</p>
+      <div class="pricing-ctas">
+        <a href="#" class="btn-primary">
+          Get your Brand OS — $750
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn-secondary">Book a call first</a>
+      </div>
+    </div>
+    <div class="guarantee-box">
+      <div class="guarantee-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="guarantee-body">
+        <h3>90-day guarantee</h3>
+        <p>Take 90 days with it. If you don't believe your Brand OS has made your team's AI output meaningfully better, tell me and I'll refund you in full. The risk sits with me, not you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <img src="/profile-t.jpg" alt="Craig Crooks" class="about-photo">
+      </div>
+      <div class="about-body">
+        <span class="section-tag">About</span>
+        <h2>I'm Craig, founder of Dark Horse Marketing.</h2>
+        <p>I've spent 20+ years helping small businesses get more from their marketing: paid ads on Google and Meta, email, social, strategy, whatever needed doing.</p>
+        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business — not the other way around. The Brand OS is the foundation I start most of that work from.</p>
+        <p>I'm based in Coffs Harbour, work with businesses across Australia, and you deal with me directly. No hand-offs, no hold music.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="prose" style="text-align:center; margin-bottom: 48px;">
+      <span class="section-tag">FAQs</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Why Claude Cowork?</h3>
+        <p>The Brand OS is built to be read automatically by every task, and Cowork is where that happens cleanly across a team. Everyone works from the same context without anyone having to reload it each time.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use this with ChatGPT or Gemini?</h3>
+        <p>The system is built Claude-native, and that's deliberate. The way Claude reads foundation files and runs Skills is a big part of why the output quality holds up. The same files won't behave the same way pasted into another tool. If you're committed to ChatGPT or Gemini, this probably isn't the right fit — and I'd say so rather than sell you something that won't perform.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need to pay for Claude?</h3>
+        <p>Yes. The Brand OS runs inside Claude Cowork, which needs a paid Claude plan. It's a modest monthly cost next to what the system saves a team in time, and I'll point you to the right plan for how your team works.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my business information safe in Claude?</h3>
+        <p>Reasonable question, since you're handing over positioning, customer language, and reviews. Most of what goes into a Brand OS is brand context rather than sensitive data, and a lot of it is already public. It's stored in your own workspace, under your control. If you have genuinely sensitive material, we keep it out of the files.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section">
+  <div class="container">
+    <div class="close-inner">
+      <h2>Book a call to talk through your business and get started.</h2>
+      <p>Or if you're ready to go, you can book and pay directly below.</p>
+      <div class="close-ctas">
+        <a href="#" class="btn-primary-lg">
+          Get your Brand OS — $750
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">Book a call first</a>
+      </div>
+      <p class="close-footnote">Built for Claude Cowork — a more capable setup than standard browser-based Claude.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">© 2025 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
+</footer>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <div class="nav-drawer-header">
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <ul class="nav-drawer-links">
+    <li><a href="https://darkhorse.marketing/#services">Services</a></li>
+    <li><a href="https://darkhorse.marketing/#about">About</a></li>
+    <li><a href="https://darkhorse.marketing/#contact">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var backdrop = document.getElementById('navBackdrop');
+  var close = document.getElementById('navClose');
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    toggle.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', function() {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  close.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+
+  drawer.querySelectorAll('.nav-drawer-links a').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
+</script>
+
+</body>
+</html>
