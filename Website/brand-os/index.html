@@ -575,35 +575,103 @@
   /* ABOUT */
   .about-inner {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 64px;
-    max-width: 800px;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    max-width: 960px;
     margin: 0 auto;
     align-items: start;
   }
 
+  .about-label {
+    position: sticky;
+    top: 94px;
+  }
+
+  .about-label h2 {
+    font-weight: 800;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .about-label .name {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+  }
+
   .about-photo {
     width: 100%;
+    max-width: 200px;
+    height: auto;
     border-radius: 16px;
     display: block;
   }
 
-  .about-body h2 {
-    font-weight: 800;
-    font-size: clamp(22px, 2.8vw, 30px);
-    letter-spacing: -0.025em;
-    margin-bottom: 16px;
-    color: var(--ink);
-  }
-
   .about-body p {
     font-size: 17px;
-    line-height: 1.75;
+    line-height: 1.7;
     color: var(--ink-mid);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .about-body p:last-child { margin-bottom: 0; }
+
+  .standout {
+    font-size: 20px;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.4;
+    padding: 20px 0;
+    border-top: 3px solid var(--accent);
+    margin-top: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .trust-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .trust-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .trust-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .trust-item p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
 
   /* FAQ */
   .faq-list {
@@ -838,7 +906,8 @@
     .changes-grid { grid-template-columns: 1fr; gap: 36px; }
     .diff-grid { grid-template-columns: 1fr; }
     .fit-grid { grid-template-columns: 1fr; }
-    .about-inner { grid-template-columns: 1fr; gap: 32px; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-label { position: static; }
     .about-photo { max-width: 160px; }
   }
 
@@ -906,23 +975,23 @@
   <div class="container">
     <div class="prose" style="text-align:center;">
       <span class="section-tag">What it is</span>
-      <h2>Three files. Everything Claude needs to know about your brand.</h2>
+      <h2>Three Files. Everything Claude Needs to Know About Your Brand.</h2>
       <p>The Brand OS is a set of three structured files that capture what your business does, how it communicates, and who it sells to. That knowledge lives inside your Claude workspace and is read automatically before anything is produced.</p>
     </div>
     <div class="files-grid">
       <div class="file-card">
-        <span class="file-card-label">the-business.md</span>
-        <h3>The Business</h3>
+        <span class="file-card-label">The Business (the-business.md)</span>
+        <h3>What the business is</h3>
         <p>The factual brief: positioning, what makes the business different, hero products or services, the competitive landscape, proof points. Written the way you'd brief a new marketing hire on their first day.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">the-voice.md</span>
-        <h3>The Voice</h3>
+        <span class="file-card-label">The Voice (the-voice.md)</span>
+        <h3>How the brand actually sounds</h3>
         <p>Captured from real patterns in real content. Not adjectives like "bold and confident." Sentence structures, rhythm, the words the brand uses, the words it never uses, and concrete before-and-after rewrites that show Claude what the voice looks like in practice.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">the-customer.md</span>
-        <h3>The Customer</h3>
+        <span class="file-card-label">The Customer (the-customer.md)</span>
+        <h3>The customer in their own language</h3>
         <p>Built from real reviews, real conversations, and real research — not invented personas. Core pains, objections, buying triggers, and the phrases customers use to describe their own problems.</p>
       </div>
     </div>
@@ -935,7 +1004,7 @@
     <div class="changes-grid">
       <div class="changes-intro">
         <span class="section-tag">What changes in practice</span>
-        <h2>The output stops drifting. The brand stays consistent.</h2>
+        <h2>The Output Stops Drifting. The Brand Stays Consistent.</h2>
         <p>Without a Brand OS, every session starts cold.</p>
         <p>Claude fills the gaps with its own best guess, the average of everything it's ever seen, which is never quite your brand.</p>
         <p>So the output drifts: from one person to the next, from one week to the next.</p>
@@ -968,7 +1037,7 @@
   <div class="container">
     <div class="prose" style="text-align:center;">
       <span class="section-tag">How this is different</span>
-      <h2>Not a prompt library. Not a guidelines PDF.</h2>
+      <h2>Not a Prompt Library. Not a Guidelines PDF.</h2>
     </div>
     <div class="diff-grid">
       <div class="diff-card">
@@ -990,7 +1059,7 @@
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
       <span class="section-tag">Who this is for</span>
-      <h2 style="font-size: clamp(28px, 3.8vw, 44px);">Businesses that handle their own marketing and want more from the AI tools they're already using.</h2>
+      <h2 style="font-size: clamp(28px, 3.8vw, 44px);">Businesses That Handle Their Own Marketing and Want More From the AI Tools They're Already Using.</h2>
     </div>
     <div class="fit-grid">
       <div>
@@ -1032,7 +1101,7 @@
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 48px;">
       <span class="section-tag">How it works</span>
-      <h2>Three stages. The only real demand on your time is the first hour.</h2>
+      <h2>Three Stages. The Only Real Demand on Your Time Is the First Hour.</h2>
     </div>
     <div class="process-list">
       <div class="process-step">
@@ -1066,7 +1135,7 @@
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
       <span class="section-tag">What's included</span>
-      <h2>Everything you need to go from zero to a working Brand OS.</h2>
+      <h2>Everything You Need to Go From Zero to a Working Brand OS.</h2>
     </div>
     <div class="included-grid">
       <div class="included-card">
@@ -1150,7 +1219,7 @@
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 48px;">
       <span class="section-tag">FAQs</span>
-      <h2>Common questions</h2>
+      <h2>Common Questions</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
@@ -1177,18 +1246,53 @@
 <section class="section section-white">
   <div class="container">
     <div class="about-inner">
-      <div>
-        <img src="/profile-t.jpg" alt="Craig Crooks" class="about-photo">
-      </div>
-      <div class="about-body">
+
+      <div class="about-label">
         <span class="section-tag">About</span>
         <h2>Meet Craig</h2>
+        <p class="name">Founder, Dark Horse Marketing</p>
+        <img src="/profile-t.jpg" alt="Craig Crooks" class="about-photo">
+      </div>
+
+      <div class="about-body">
         <p>I've spent 20+ years helping small businesses get more from their marketing.</p>
         <p>Paid ad campaigns on Google, Meta and other platforms. Email &amp; social media marketing, strategy consulting and whatever else needed doing.</p>
-        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business — not the other way around.</p>
+        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business...not the other way around.</p>
         <p>I'm based in Coffs Harbour and love working one-on-one with local businesses. I also take on clients Australia-wide if the fit is good.</p>
         <p>AI moves fast. New tools, new capabilities, new hype. It never stops. Your job is to run your business. Mine is to make sure you're not missing anything that matters.</p>
+        <div class="standout">You don't need to keep up with AI. That's my job.</div>
+
+        <div class="trust-items">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div>
+              <h4>Systems, Not Just Tools</h4>
+              <p>I build documented AI systems your team can actually use, not a subscription to something you'll forget about in three months.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            </div>
+            <div>
+              <h4>Built for Your Business</h4>
+              <p>Everything is configured around your operations, your customers, and your goals. We focus on solving your biggest problems.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Local &amp; Accessible</h4>
+              <p>Coffs Harbour-based. Personally available. No hand-offs, no hold music.</p>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1197,7 +1301,7 @@
 <section class="close-section">
   <div class="container">
     <div class="close-inner">
-      <h2>Book a call to talk through your business and get started.</h2>
+      <h2>Book a Call to Talk Through Your Business and Get Started.</h2>
       <p>Or if you're ready to go, you can book and pay directly below.</p>
       <div class="close-ctas">
         <a href="#" class="btn-primary-lg">
