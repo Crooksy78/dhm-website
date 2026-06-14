@@ -205,6 +205,7 @@
     letter-spacing: -0.025em;
     margin-bottom: 24px;
     color: var(--ink);
+    text-align: center;
   }
 
   .prose p {
@@ -447,9 +448,9 @@
   /* ALSO INCLUDED */
   .included-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 800px;
+    max-width: 960px;
     margin: 40px auto 0;
   }
 
@@ -833,12 +834,16 @@
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .files-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .included-grid { grid-template-columns: 1fr 1fr; max-width: 640px; }
     .changes-grid { grid-template-columns: 1fr; gap: 36px; }
     .diff-grid { grid-template-columns: 1fr; }
     .fit-grid { grid-template-columns: 1fr; }
-    .included-grid { grid-template-columns: 1fr; max-width: 480px; }
     .about-inner { grid-template-columns: 1fr; gap: 32px; }
     .about-photo { max-width: 160px; }
+  }
+
+  @media (max-width: 600px) {
+    .included-grid { grid-template-columns: 1fr; max-width: 480px; }
   }
 
   @media (max-width: 768px) {
@@ -902,22 +907,22 @@
     <div class="prose" style="text-align:center;">
       <span class="section-tag">What it is</span>
       <h2>Three files. Everything Claude needs to know about your brand.</h2>
-      <p>The Brand OS is a set of three structured files that capture what your business does, how it communicates, and who it sells to. That knowledge lives inside your Claude workspace — read automatically before anything is produced.</p>
+      <p>The Brand OS is a set of three structured files that capture what your business does, how it communicates, and who it sells to. That knowledge lives inside your Claude workspace and is read automatically before anything is produced.</p>
     </div>
     <div class="files-grid">
       <div class="file-card">
-        <span class="file-card-label">brand-dna.md — The Business</span>
-        <h3>What the business is</h3>
+        <span class="file-card-label">the-business.md</span>
+        <h3>The Business</h3>
         <p>The factual brief: positioning, what makes the business different, hero products or services, the competitive landscape, proof points. Written the way you'd brief a new marketing hire on their first day.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">brand-voice.md — The Voice</span>
-        <h3>How the brand actually sounds</h3>
+        <span class="file-card-label">the-voice.md</span>
+        <h3>The Voice</h3>
         <p>Captured from real patterns in real content. Not adjectives like "bold and confident." Sentence structures, rhythm, the words the brand uses, the words it never uses, and concrete before-and-after rewrites that show Claude what the voice looks like in practice.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">icp-cards.md — The Customer</span>
-        <h3>The customer in their own language</h3>
+        <span class="file-card-label">the-customer.md</span>
+        <h3>The Customer</h3>
         <p>Built from real reviews, real conversations, and real research — not invented personas. Core pains, objections, buying triggers, and the phrases customers use to describe their own problems.</p>
       </div>
     </div>
@@ -931,19 +936,19 @@
       <div class="changes-intro">
         <span class="section-tag">What changes in practice</span>
         <h2>The output stops drifting. The brand stays consistent.</h2>
-        <p>Without a Brand OS, every session starts cold. Claude fills the gaps with its own best guess — the average of everything it's ever seen, which is never quite your brand. The post written on Tuesday reads differently to the one from Monday. The new hire's work sounds different from the person who's been there two years.</p>
-        <p>Once the three files are in place, every person and every task starts from the same context. Consistency stops depending on who's at the keyboard.</p>
-        <p>It also gives your team back the hours they currently lose to editing first drafts into shape. When the first draft lands close, that time comes back — across a whole team, across every task.</p>
-        <p>And it compounds. A brand guidelines PDF is worth the same the day you file it as the day it goes stale. The Brand OS is the opposite: every Skill you run on it, every task it touches, makes the system more useful. It's an asset that appreciates.</p>
+        <p>Without a Brand OS, every session starts cold.</p>
+        <p>Claude fills the gaps with its own best guess, the average of everything it's ever seen, which is never quite your brand.</p>
+        <p>So the output drifts: from one person to the next, from one week to the next.</p>
+        <p>Once the three files are in place, every task starts from the same context. The drift stops, and consistency no longer depends on who's at the keyboard.</p>
       </div>
       <div class="changes-aside">
         <div class="change-item">
           <h4>Consistent output across the team</h4>
-          <p>The post written Tuesday reads like the one from Monday. The new hire's work sounds like the work of someone who's been there two years.</p>
+          <p>Everyone produces work in the same voice, regardless of experience level or how long they've been there.</p>
         </div>
         <div class="change-item">
           <h4>Better first drafts</h4>
-          <p>When Claude starts brand-aware, the gap between first draft and usable output closes significantly. Less editing, less time spent putting the brand back in.</p>
+          <p>Claude starts brand-aware, so there's less editing and less time spent putting the brand back in before anything's usable.</p>
         </div>
         <div class="change-item">
           <h4>Brand knowledge that stays</h4>
@@ -951,7 +956,7 @@
         </div>
         <div class="change-item">
           <h4>A system that compounds</h4>
-          <p>Every Skill you build on top of it extends its value. The Brand OS is the foundation — and foundations appreciate.</p>
+          <p>Every Skill you build on top of it extends its value. The Brand OS is the foundation, and foundations appreciate.</p>
         </div>
       </div>
     </div>
@@ -985,7 +990,7 @@
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
       <span class="section-tag">Who this is for</span>
-      <h2>Businesses that handle their own marketing and want more from the AI tools they're already using.</h2>
+      <h2 style="font-size: clamp(28px, 3.8vw, 44px);">Businesses that handle their own marketing and want more from the AI tools they're already using.</h2>
     </div>
     <div class="fit-grid">
       <div>
@@ -1033,8 +1038,8 @@
       <div class="process-step">
         <span class="step-num">01</span>
         <div>
-          <h3>Discovery session</h3>
-          <p>A structured interview — you answer questions about the business: your positioning, your customers, your voice, what makes you different. It takes around an hour and there's nothing to prepare. You just bring what you know about your business.</p>
+          <h3>Discovery &amp; prep</h3>
+          <p>A structured interview — you answer questions about the business: your positioning, your customers, your voice, what makes you different. It takes around an hour and there's nothing to prepare. You just bring what you know about your business. Before we start, we'll also ask you to pull together your best existing content — top-performing emails, ads, landing pages, anything that sounds most like you — so the research phase has the right material to work from.</p>
         </div>
       </div>
       <div class="process-step">
@@ -1056,34 +1061,41 @@
   </div>
 </section>
 
-<!-- ALSO INCLUDED -->
+<!-- WHAT'S INCLUDED -->
 <section class="section">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
-      <span class="section-tag">Also included</span>
-      <h2>Everything you need to start using the system straight away.</h2>
+      <span class="section-tag">What's included</span>
+      <h2>Everything you need to go from zero to a working Brand OS.</h2>
     </div>
     <div class="included-grid">
+      <div class="included-card">
+        <div class="inc-icon inc-blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>The three foundation files</h3>
+        <p>the-business.md, the-voice.md, and the-customer.md — researched and built from scratch using your real assets, real content, and real customer language. Not roughed out in an afternoon. Built from evidence.</p>
+      </div>
+      <div class="included-card">
+        <div class="inc-icon inc-teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+        </div>
+        <h3>Installation &amp; setup</h3>
+        <p>We install and configure the files in your Claude Cowork workspace, run test tasks against the Brand OS, and refine anything that doesn't feel right. You get a working system from day one, not files sitting in a folder waiting to be read.</p>
+      </div>
       <div class="included-card">
         <div class="inc-icon inc-purple">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <h3>Two custom Claude Skills</h3>
-        <p>Skills are what sit on top of the Brand OS to do specific jobs — and each one reads from your Brand OS automatically. We build two scoped to what your team actually does, so you can see how the foundation and Skills work together from day one.</p>
-      </div>
-      <div class="included-card">
-        <div class="inc-icon inc-teal">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>An anti-slop Skill</h3>
-        <p>Strips out the generic AI patterns — "unlock," "game-changer," safe filler — that creep into output even when the brand context is right. Your Brand OS teaches Claude what your voice is. This catches what it isn't. Run it as a final pass on anything before it goes out.</p>
+        <p>Skills sit on top of the Brand OS and do specific jobs — and each one reads from your foundation files automatically. We build two scoped to your team's highest-volume tasks, so you can see how the system works in practice from the start.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-orange">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Build-your-own Skills resource</h3>
-        <p>The real power of your Brand OS comes from the Skills you build yourself, based on your own processes. We give you what you need to create your own — so the system keeps growing without relying on us.</p>
+        <h3>An anti-slop Skill</h3>
+        <p>Strips out the generic AI patterns — "unlock," "game-changer," safe filler — that creep into output even when the brand context is right. Your Brand OS teaches Claude what your voice is. This catches what it isn't. Run it as a final pass before anything goes out.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-blue">
@@ -1091,6 +1103,13 @@
         </div>
         <h3>A self-improving Skill</h3>
         <p>Checks the output of your other Skills against their own rules and improves them over time. The system gets sharper the more you use it.</p>
+      </div>
+      <div class="included-card">
+        <div class="inc-icon inc-teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Training documentation</h3>
+        <p>Everything your team needs to get up and running: how to use the Brand OS, how the Skills work, and how to build your own. The system keeps growing with your business, not just with us.</p>
       </div>
     </div>
   </div>
@@ -1104,8 +1123,8 @@
     </div>
     <div class="pricing-box">
       <div class="pricing-amount">$750</div>
-      <p class="pricing-note">Introductory price — will rise as the offer is refined</p>
-      <p class="pricing-body">Covers the discovery session, the research and build of all three files, setup in your workspace, and everything listed above. This is also the foundation, not the finish line — most teams build on it from here, adding Skills and workflows as they find new uses for the system.</p>
+      <p class="pricing-note">Introductory price — limited time</p>
+      <p class="pricing-body">Everything above, delivered over about a week. You're not paying for an hour of someone's time. You're paying for a permanent system — one that makes every piece of AI-generated content your team produces better from the day it goes in, and keeps getting more useful the more you build on it.</p>
       <div class="pricing-ctas">
         <a href="#" class="btn-primary">
           Get your Brand OS — $750
@@ -1126,26 +1145,8 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section">
-  <div class="container">
-    <div class="about-inner">
-      <div>
-        <img src="/profile-t.jpg" alt="Craig Crooks" class="about-photo">
-      </div>
-      <div class="about-body">
-        <span class="section-tag">About</span>
-        <h2>I'm Craig, founder of Dark Horse Marketing.</h2>
-        <p>I've spent 20+ years helping small businesses get more from their marketing: paid ads on Google and Meta, email, social, strategy, whatever needed doing.</p>
-        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business — not the other way around. The Brand OS is the foundation I start most of that work from.</p>
-        <p>I'm based in Coffs Harbour, work with businesses across Australia, and you deal with me directly. No hand-offs, no hold music.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
-<section class="section section-white">
+<section class="section">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 48px;">
       <span class="section-tag">FAQs</span>
@@ -1154,19 +1155,39 @@
     <div class="faq-list">
       <div class="faq-item">
         <h3>Why Claude Cowork?</h3>
-        <p>The Brand OS is built to be read automatically by every task, and Cowork is where that happens cleanly across a team. Everyone works from the same context without anyone having to reload it each time.</p>
+        <p>Claude Cowork is designed as a shared team workspace, and it's the cleanest way to make foundation files available automatically to every task. It's built around an agent model, which means Skills run on top of your Brand OS without anyone having to load context manually each time. Everyone on the team works from the same foundation, every session, without thinking about it.</p>
       </div>
       <div class="faq-item">
         <h3>Can I use this with ChatGPT or Gemini?</h3>
-        <p>The system is built Claude-native, and that's deliberate. The way Claude reads foundation files and runs Skills is a big part of why the output quality holds up. The same files won't behave the same way pasted into another tool. If you're committed to ChatGPT or Gemini, this probably isn't the right fit — and I'd say so rather than sell you something that won't perform.</p>
+        <p>The system is built Claude-native, and that's deliberate. Claude's ability to read foundation files and run Skills consistently is core to how the Brand OS holds up in practice. The same files pasted into another tool won't behave the same way — the agent layer that reads them automatically isn't there. If you're committed to ChatGPT or Gemini, this probably isn't the right fit, and I'd say so rather than sell you something that won't perform.</p>
       </div>
       <div class="faq-item">
         <h3>Do I need to pay for Claude?</h3>
-        <p>Yes. The Brand OS runs inside Claude Cowork, which needs a paid Claude plan. It's a modest monthly cost next to what the system saves a team in time, and I'll point you to the right plan for how your team works.</p>
+        <p>Yes. The Brand OS runs inside Claude Cowork, which needs a paid Claude plan. It's a modest monthly cost next to what the system saves a team in time and gives you access to the more advanced features of Claude.</p>
       </div>
       <div class="faq-item">
         <h3>Is my business information safe in Claude?</h3>
-        <p>Reasonable question, since you're handing over positioning, customer language, and reviews. Most of what goes into a Brand OS is brand context rather than sensitive data, and a lot of it is already public. It's stored in your own workspace, under your control. If you have genuinely sensitive material, we keep it out of the files.</p>
+        <p>On Pro plans and above — which is what Cowork requires — you control what Claude can do with your data, and Anthropic does not use your conversations to train its models. Most of what goes into a Brand OS is brand context rather than sensitive data, and much of it is already public. Your files live in your own workspace, under your control. If you have genuinely sensitive material, we keep it out of the files.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-white">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <img src="/profile-t.jpg" alt="Craig Crooks" class="about-photo">
+      </div>
+      <div class="about-body">
+        <span class="section-tag">About</span>
+        <h2>Meet Craig</h2>
+        <p>I've spent 20+ years helping small businesses get more from their marketing.</p>
+        <p>Paid ad campaigns on Google, Meta and other platforms. Email &amp; social media marketing, strategy consulting and whatever else needed doing.</p>
+        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business — not the other way around.</p>
+        <p>I'm based in Coffs Harbour and love working one-on-one with local businesses. I also take on clients Australia-wide if the fit is good.</p>
+        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. Your job is to run your business. Mine is to make sure you're not missing anything that matters.</p>
       </div>
     </div>
   </div>
