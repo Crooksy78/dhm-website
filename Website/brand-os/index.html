@@ -231,6 +231,7 @@
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 32px 28px;
+    text-align: center;
   }
 
   .file-card-label {
@@ -241,6 +242,18 @@
     color: var(--accent);
     margin-bottom: 14px;
     display: block;
+    text-align: center;
+  }
+
+  .file-card-label .label-name {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
   }
 
   .file-card h3 {
@@ -980,17 +993,17 @@
     </div>
     <div class="files-grid">
       <div class="file-card">
-        <span class="file-card-label">The Business (the-business.md)</span>
+        <span class="file-card-label"><span class="label-name">The Business</span>the-business.md</span>
         <h3>What the business is</h3>
         <p>The factual brief: positioning, what makes the business different, hero products or services, the competitive landscape, proof points. Written the way you'd brief a new marketing hire on their first day.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">The Voice (the-voice.md)</span>
+        <span class="file-card-label"><span class="label-name">The Voice</span>the-voice.md</span>
         <h3>How the brand actually sounds</h3>
         <p>Captured from real patterns in real content. Not adjectives like "bold and confident." Sentence structures, rhythm, the words the brand uses, the words it never uses, and concrete before-and-after rewrites that show Claude what the voice looks like in practice.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label">The Customer (the-customer.md)</span>
+        <span class="file-card-label"><span class="label-name">The Customer</span>the-customer.md</span>
         <h3>The customer in their own language</h3>
         <p>Built from real reviews, real conversations, and real research — not invented personas. Core pains, objections, buying triggers, and the phrases customers use to describe their own problems.</p>
       </div>
