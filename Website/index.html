@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coffs Harbour AI  & Google Ads Consulting | Dark Horse Marketing</title>
-<meta name="description" content="20+ years in paid ads. Now building AI systems for small business. Voice agents, automations and Google Ads. Coffs Harbour, available Australia-wide.">
+<meta name="robots" content="noindex, nofollow">
+<title>Coffs Harbour AI Consulting | Dark Horse Marketing</title>
+<meta name="description" content="20+ years in marketing. Now building AI systems for small business. Brand OS, Claude Code training and AI systems for marketing teams. Coffs Harbour, available Australia-wide.">
 
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +33,11 @@
     --feat-teal-light: #e6f5f3;
     --feat-orange: #d96a3b;
     --feat-orange-light: #fdf0ea;
+
+    --optA: var(--feat-orange);
+    --optA-tint: var(--feat-orange-light);
+    --optB: var(--feat-teal);
+    --optB-tint: var(--feat-teal-light);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -135,6 +141,13 @@
     margin: 0 auto;
   }
 
+  .hero-bridge {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 18px;
+  }
+
   .hero-location {
     font-size: 14px;
     color: var(--ink-light);
@@ -161,7 +174,7 @@
 
   .services-header {
     text-align: center;
-    max-width: 640px;
+    max-width: 720px;
     margin: 0 auto 56px;
   }
 
@@ -177,6 +190,22 @@
     font-size: 18px;
     color: var(--ink-muted);
     line-height: 1.6;
+  }
+
+  .services-payoff {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 14px;
+  }
+
+  .services-header h3 {
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 44px;
+    margin-bottom: 14px;
   }
 
   .services-grid {
@@ -338,6 +367,139 @@
 
   .service-card:hover .service-link { gap: 10px; }
 
+  /* ── OPTION BLOCKS (A / B) ── */
+  .option-block {
+    position: relative;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding-left: 6px;
+  }
+
+  .option-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    background: var(--opt-accent);
+  }
+
+  .option-a { --opt-accent: var(--optA); --opt-tint: var(--optA-tint); }
+  .option-b { --opt-accent: var(--optB); --opt-tint: var(--optB-tint); }
+
+  .option-head {
+    background: var(--opt-tint);
+    border-bottom: 1px solid var(--border);
+    padding: 44px 0 40px;
+  }
+
+  .option-head .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .option-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ffffff;
+    background: var(--opt-accent);
+    padding: 7px 14px;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+
+  .option-head h2 {
+    font-weight: 800;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .option-head .option-sub {
+    flex-basis: 100%;
+    font-size: 17px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 720px;
+    margin-top: 12px;
+  }
+
+  /* nested sections drop their own top border — rail + band already delimit */
+  .option-block > .offer,
+  .option-block > .examples,
+  .option-block > .option-pricing { border-top: none; }
+
+  /* white examples band reads as an inset panel */
+  .option-block > .examples {
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .option-block > .offer:first-of-type { padding-bottom: 8px; }
+  .option-block > .option-pricing { padding-top: 16px; }
+
+  /* inner headings step down so the wrapper reads as parent */
+  .option-block .offer-header h2,
+  .option-block .examples-header h2 { font-size: clamp(24px, 2.6vw, 32px); }
+  .option-block .offer-header p,
+  .option-block .examples-header p { font-size: 17px; }
+
+  .pricing-bridge {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+  }
+
+  .pricing-bridge h2 {
+    font-weight: 800;
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+
+  .pricing-bridge p {
+    font-size: 17px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* CTA inside an option block takes that block's accent */
+  .option-b .btn-primary { background: var(--opt-accent); }
+  .option-b .btn-primary:hover { background: #0b7d73; }
+
+  /* sticky nav is 64px — keep anchored sections clear of it */
+  #services, #offer, #examples, #about, #contact,
+  #option-a, #option-b, #option-a-pricing, #option-b-detail {
+    scroll-margin-top: 64px;
+  }
+
+  @media (max-width: 768px) {
+    .option-block { padding-left: 4px; }
+    .option-block::before { width: 4px; }
+
+    .option-head { padding: 32px 0 28px; }
+    .option-head .container { display: block; }
+    .option-tag { display: inline-block; margin-bottom: 14px; }
+    .option-head h2 { font-size: 26px; }
+    .option-head .option-sub { font-size: 16px; margin-top: 10px; }
+
+    .option-block > .option-pricing { padding-top: 44px; }
+    .pricing-bridge { margin-bottom: 32px; }
+    .pricing-bridge h2 { font-size: 24px; }
+
+    .option-block .offer-header h2,
+    .option-block .examples-header h2 { font-size: 24px; }
+  }
+
   /* ABOUT STRIP */
   .about-strip {
     padding: 72px 0;
@@ -407,6 +569,7 @@
   .trust-item {
     background: var(--bg-white);
     border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
     border-radius: 16px;
     padding: 24px 28px;
     display: flex;
@@ -438,110 +601,255 @@
     line-height: 1.5;
   }
 
-  /* AI STRATEGY CALL */
-  .strategy-call {
-    padding: 72px 0;
+  /* THE OFFER */
+  .offer {
+    padding: 80px 0 96px;
     border-top: 1px solid var(--border);
   }
 
-  .strategy-call-box {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 48px 56px;
-    max-width: 800px;
-    margin: 0 auto;
+  .offer-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
   }
 
-  .strategy-call-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-  }
-
-  .strategy-call-box h2 {
+  .offer-header h2 {
     font-weight: 800;
-    font-size: clamp(28px, 3.5vw, 40px);
+    font-size: clamp(30px, 3.8vw, 44px);
     line-height: 1.12;
     letter-spacing: -0.03em;
-    margin-bottom: 32px;
-    text-align: center;
+    margin-bottom: 12px;
   }
 
-  .strategy-call-box h2 span {
+  .offer-header h2 span { color: var(--accent); }
+
+  .offer-header p {
+    font-size: 18px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .offer-kicker {
+    font-weight: 700;
+    color: var(--ink) !important;
+    margin-top: 14px;
+  }
+
+  /* STEPS */
+  .offer-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .offer-step {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 26px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .offer-step.step-highlight {
+    border-color: var(--accent);
+    box-shadow: 0 6px 28px rgba(79,109,245,0.13);
+  }
+
+  .step-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     color: var(--accent);
   }
 
-  .strategy-call-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 36px;
+  .step-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-mid);
+    background: #f2f1ee;
+    border-radius: 100px;
+    padding: 4px 12px;
   }
 
-  .strategy-call-block h3 {
+  .step-price.step-free {
+    color: var(--accent);
+    background: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+  }
+
+  .offer-step h3 {
     font-weight: 800;
-    font-size: 18px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.01em;
-    text-transform: none;
+    font-size: 19px;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 12px;
     color: var(--ink);
-    margin-bottom: 12px;
   }
 
-  .strategy-call-block p {
-    font-size: 16px;
+  .offer-step p {
+    font-size: 15px;
     color: var(--ink-muted);
-    line-height: 1.65;
-    margin-bottom: 12px;
+    line-height: 1.6;
+    flex-grow: 1;
   }
 
-  .strategy-call-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 12px;
-  }
-
-  .strategy-call-bullets li {
-    font-size: 16px;
-    color: var(--ink-muted);
-    line-height: 1.55;
+  .step-note {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-  }
-
-  .strategy-call-bullets li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-
-  .strategy-call-emphasis {
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    font-size: 13.5px;
     font-weight: 600;
-    color: var(--ink) !important;
+    line-height: 1.45;
+    color: var(--accent);
   }
 
-  .strategy-call-footer {
+  .step-note svg { flex-shrink: 0; margin-top: 3px; }
+
+  /* PRICING SUMMARY */
+  .pricing-summary {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    max-width: 640px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+
+  .pricing-summary-row {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 24px;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .pricing-summary-row:last-child { border-bottom: none; }
+
+  .pricing-summary-label {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .pricing-summary-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .pricing-summary-free {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+  }
+
+  .pricing-summary-note {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-light);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-summary-row { padding: 16px 20px; flex-direction: column; gap: 4px; }
+    .pricing-summary-value { text-align: left; }
+  }
+
+  /* WORST CASE */
+  .offer-worstcase {
+    background: var(--accent-light);
+    border-radius: 16px;
+    padding: 24px 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 56px;
+  }
+
+  .offer-worstcase strong { color: var(--ink); font-weight: 800; }
+
+  /* GUARANTEE */
+  .offer-guarantee {
+    background: var(--bg-white);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 48px 52px;
+    max-width: 860px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(79,109,245,0.15);
+  }
+
+  .guarantee-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+
+  .guarantee-heading {
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 28px);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+
+  .guarantee-body p {
+    font-size: 16.5px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .guarantee-body p:last-child { margin-bottom: 0; }
+
+  .guarantee-lead {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* OFFER CTA */
+  .offer-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .offer-capacity {
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-top: 16px;
   }
 
   .btn-primary {
@@ -563,10 +871,510 @@
     transform: translateY(-1px);
   }
 
+  @media (max-width: 1040px) {
+    .offer-steps { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 768px) {
-    .strategy-call { padding: 56px 0; }
-    .strategy-call-box { padding: 32px 28px; }
-    .strategy-call-content { grid-template-columns: 1fr; gap: 28px; }
+    .offer { padding: 56px 0 64px; }
+    .offer-header { margin-bottom: 36px; }
+    .offer-steps { grid-template-columns: 1fr; gap: 16px; }
+    .offer-step { padding: 24px 22px 26px; }
+    .offer-worstcase { padding: 22px 24px; font-size: 15.5px; margin-bottom: 40px; }
+    .offer-guarantee { padding: 30px 26px; }
+    .guarantee-body p { font-size: 16px; }
+    .offer-cta { margin-top: 36px; }
+    .btn-primary { width: 100%; justify-content: center; }
+  }
+
+  /* EXAMPLES */
+  .examples {
+    padding: 80px 0 96px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-white);
+  }
+
+  .examples-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+  }
+
+  .examples-header h2 {
+    font-weight: 800;
+    font-size: clamp(30px, 3.8vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+
+  .examples-header p {
+    font-size: 18px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .example-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .example-card:hover {
+    border-color: var(--ex-accent);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    transform: translateY(-3px);
+  }
+
+  .ex-blue   { --ex-accent: var(--accent);       --ex-tint: var(--accent-light); }
+  .ex-teal   { --ex-accent: var(--feat-teal);    --ex-tint: var(--feat-teal-light); }
+  .ex-orange { --ex-accent: var(--feat-orange);  --ex-tint: var(--feat-orange-light); }
+  .ex-purple { --ex-accent: var(--feat-purple);  --ex-tint: var(--feat-purple-light); }
+
+  .example-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--ex-tint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .example-card h3 {
+    font-weight: 800;
+    font-size: 18.5px;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .example-pain {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.55;
+    padding-left: 14px;
+    border-left: 2px solid var(--ex-accent);
+    margin-bottom: 14px;
+  }
+
+  .example-card p.example-what {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 18px;
+  }
+
+  .example-throughput {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: auto;
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: var(--ex-tint);
+    border-radius: 11px;
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--ex-accent);
+    letter-spacing: -0.01em;
+  }
+
+  .example-throughput svg { flex-shrink: 0; margin-top: 2px; }
+
+  .example-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .example-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ex-accent);
+    background: var(--ex-tint);
+    border-radius: 100px;
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── HYBRID: Gradient BG + Left Border + Thick Pipe ── */
+  .coverage-item {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08), rgba(79, 109, 245, 0.04));
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--accent);
+    border-radius: 18px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coverage-item:nth-child(1) {
+    border-left-color: var(--feat-teal);
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(79, 109, 245, 0.04));
+  }
+  .coverage-item:nth-child(2) {
+    border-left-color: var(--accent);
+    background: linear-gradient(135deg, rgba(79, 109, 245, 0.1), rgba(217, 106, 59, 0.04));
+  }
+  .coverage-item:nth-child(3) {
+    border-left-color: var(--feat-orange);
+    background: linear-gradient(135deg, rgba(217, 106, 59, 0.1), rgba(124, 92, 191, 0.04));
+  }
+  .coverage-item:nth-child(4) {
+    border-left-color: var(--feat-purple);
+    background: linear-gradient(135deg, rgba(124, 92, 191, 0.1), rgba(13, 148, 136, 0.04));
+  }
+  .coverage-item:nth-child(5) {
+    border-left-color: var(--feat-teal);
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08), rgba(124, 92, 191, 0.05));
+  }
+  .coverage-item:nth-child(6) {
+    border-left-color: var(--accent);
+    background: linear-gradient(135deg, rgba(79, 109, 245, 0.08), rgba(217, 106, 59, 0.05));
+  }
+  .coverage-item:nth-child(7) {
+    border-left-color: var(--feat-orange);
+    background: linear-gradient(135deg, rgba(217, 106, 59, 0.08), rgba(79, 109, 245, 0.05));
+  }
+  .coverage-item:nth-child(8) {
+    border-left-color: var(--feat-purple);
+    background: linear-gradient(135deg, rgba(124, 92, 191, 0.08), rgba(13, 148, 136, 0.05));
+  }
+
+  .coverage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .coverage-item h3 {
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .coverage-item h3::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+  }
+
+  .coverage-item:nth-child(1) h3::before { background: var(--feat-teal); }
+  .coverage-item:nth-child(2) h3::before { background: var(--accent); }
+  .coverage-item:nth-child(3) h3::before { background: var(--feat-orange); }
+  .coverage-item:nth-child(4) h3::before { background: var(--feat-purple); }
+  .coverage-item:nth-child(5) h3::before { background: var(--feat-teal); }
+  .coverage-item:nth-child(6) h3::before { background: var(--accent); }
+  .coverage-item:nth-child(7) h3::before { background: var(--feat-orange); }
+  .coverage-item:nth-child(8) h3::before { background: var(--feat-purple); }
+
+  .coverage-item p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 1040px) {
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .coverage-grid { grid-template-columns: 1fr; gap: 18px; }
+    .coverage-item { padding: 24px 22px; }
+    .coverage-item h3 { font-size: 17px; margin-bottom: 12px; }
+    .coverage-item p { font-size: 14.5px; }
+  }
+
+/* ── COMBO B (ALTERNATIVE): Numbered badges + full gradient backgrounds ── */
+  /* Uncomment below and comment out COMBO A above to test
+  .coverage-item {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08), rgba(79, 109, 245, 0.04));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coverage-item:nth-child(odd) { background: linear-gradient(135deg, rgba(13, 148, 136, 0.08), rgba(79, 109, 245, 0.04)); }
+  .coverage-item:nth-child(even) { background: linear-gradient(135deg, rgba(217, 106, 59, 0.06), rgba(124, 92, 191, 0.04)); }
+
+  .coverage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .coverage-item h3 {
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    padding-left: 32px;
+  }
+
+  .coverage-item h3::before {
+    content: counter(coverage-counter);
+    position: absolute;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    counter-increment: coverage-counter;
+  }
+
+  .coverage-grid { counter-reset: coverage-counter 0; }
+  */
+
+  /* ── COMBO C (ALTERNATIVE): Icons + left borders (no background) ── */
+  /* Uncomment below and comment out COMBO A above to test
+  .coverage-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--accent);
+    border-radius: 18px;
+    padding: 28px 28px 28px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coverage-item:nth-child(1) { border-left-color: var(--feat-teal); }
+  .coverage-item:nth-child(2) { border-left-color: var(--accent); }
+  .coverage-item:nth-child(3) { border-left-color: var(--feat-orange); }
+  .coverage-item:nth-child(4) { border-left-color: var(--feat-purple); }
+  .coverage-item:nth-child(5) { border-left-color: var(--feat-teal); }
+  .coverage-item:nth-child(6) { border-left-color: var(--accent); }
+  .coverage-item:nth-child(7) { border-left-color: var(--feat-orange); }
+  .coverage-item:nth-child(8) { border-left-color: var(--feat-purple); }
+
+  .coverage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .coverage-item h3 {
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    padding-right: 28px;
+  }
+
+  .coverage-item h3::before { display: none; }
+  .coverage-item h3::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 800;
+    opacity: 0.15;
+    transition: opacity 0.2s;
+  }
+
+  .coverage-item:hover h3::after { opacity: 0.3; }
+  */
+
+  .examples-footnote {
+    text-align: center;
+    max-width: 720px;
+    margin: 48px auto 0;
+    font-size: 16.5px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  .examples-footnote strong { color: var(--ink); font-weight: 700; }
+
+  .examples-footnote-sub {
+    margin-top: 18px;
+    font-size: 15.5px;
+    color: var(--ink-light);
+  }
+
+  @media (max-width: 1040px) {
+    .examples-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .examples { padding: 56px 0 64px; }
+    .examples-header { margin-bottom: 36px; }
+    .examples-grid { grid-template-columns: 1fr; gap: 16px; }
+    .example-card { padding: 26px 24px 28px; }
+    .examples-footnote { margin-top: 32px; font-size: 16px; }
+  }
+
+  /* WHERE AI HELPS — channel tabs */
+  .aih { padding: 76px 0 96px; border-top: 1px solid var(--border); background: var(--bg-white); }
+
+  .aih-head { text-align: center; max-width: 680px; margin: 0 auto 32px; }
+
+  .aih-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .aih-head h2 {
+    font-weight: 800;
+    font-size: clamp(24px, 3.4vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+    white-space: nowrap;
+  }
+
+  .aih-head p { font-size: 17px; color: var(--ink-muted); line-height: 1.6; }
+
+  .aih-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .aih-tab {
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink-mid);
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 100px;
+    padding: 9px 18px;
+    cursor: pointer;
+    transition: border-color .18s, background .18s, color .18s;
+    white-space: nowrap;
+  }
+
+  .aih-tab:hover, .aih-tab:focus-visible { border-color: var(--accent); outline: none; }
+
+  .aih-tab[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+
+  .aih-role {
+    text-align: center;
+    font-size: 15px;
+    color: var(--ink-light);
+    margin-bottom: 22px;
+    min-height: 23px;
+  }
+
+  .aih-panel {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .aih-item {
+    background: var(--accent-light);
+    border-radius: 11px;
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+    color: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .aih-item { animation: aihIn .32s ease both; }
+  }
+
+  @keyframes aihIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .aih-foot {
+    text-align: center;
+    font-size: 15px;
+    color: var(--ink-light);
+    margin-top: 22px;
+  }
+
+  @media (max-width: 860px) {
+    .aih-tab { font-size: 13.5px; padding: 8px 14px; }
+  }
+
+  @media (max-width: 768px) {
+    .aih { padding: 52px 0 64px; }
+    .aih-tabs { gap: 6px; }
+    .aih-tab { font-size: 12.5px; padding: 7px 12px; }
+    .aih-panel { padding: 14px; gap: 9px; grid-template-columns: 1fr; }
+    .aih-item { font-size: 14px; padding: 13px 10px; }
   }
 
   /* CONTACT */
@@ -851,6 +1659,8 @@
     <a href="https://darkhorse.marketing/" class="logo">Dark Horse Marketing<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#option-a">Done For You</a></li>
+      <li><a href="#option-b">Training</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -869,59 +1679,59 @@
     Marketing & AI for Small Business
   </div>
   <h1>
-    <span class="line-sm">Give Your Marketing Team</span>
+    <span class="line-sm">We Give Your Marketing Manager</span>
     <span class="line-lg">An Unfair Advantage</span>
   </h1>
-  <p class="hero-sub">A small marketing team with the right AI systems in place won't feel like a small marketing team for much longer</p>
+  <p class="hero-sub">One marketing person with the right AI systems installed can out-produce a larger department that doesn't have them</p>
   <p class="hero-location">Based in Coffs Harbour. Working with businesses across Australia.</p>
 </section>
 
 <!-- LOGO STRIP -->
 <section class="logos-strip">
   <div class="logos-track">
-    <img src="logos/logo-01.png" alt="Client logo">
-    <img src="logos/logo-02.png" alt="Client logo">
-    <img src="logos/big4-saltwater.webp" alt="Client logo">
-    <img src="logos/logo-03.png" alt="Client logo">
-    <img src="logos/logo-04.png" alt="Client logo">
-    <img src="logos/big4-tweed.webp" alt="Client logo">
-    <img src="logos/logo-05.png" alt="Client logo">
-    <img src="logos/logo-06.png" alt="Client logo">
-    <img src="logos/airguides.jpeg" alt="Client logo">
-    <img src="logos/logo-07.png" alt="Client logo">
-    <img src="logos/logo-08.png" alt="Client logo">
-    <img src="logos/collecting-cars-logo.svg" alt="Client logo">
-    <img src="logos/logo-10.png" alt="Client logo">
-    <img src="logos/logo-11.png" alt="Client logo">
-    <img src="logos/rr-dark.webp" alt="Client logo">
-    <img src="logos/logo-12.png" alt="Client logo">
-    <img src="logos/logo-13.png" alt="Client logo">
-    <img src="logos/Aerolight-Logo-Positive.png" alt="Client logo">
-    <img src="logos/logo-14.png" alt="Client logo">
-    <img src="logos/logo-16.png" alt="Client logo">
-    <img src="logos/dressxox.webp" alt="Client logo">
+    <img src="../logos/logo-01.png" alt="Client logo">
+    <img src="../logos/logo-02.png" alt="Client logo">
+    <img src="../logos/big4-saltwater.webp" alt="Client logo">
+    <img src="../logos/logo-03.png" alt="Client logo">
+    <img src="../logos/logo-04.png" alt="Client logo">
+    <img src="../logos/big4-tweed.webp" alt="Client logo">
+    <img src="../logos/logo-05.png" alt="Client logo">
+    <img src="../logos/logo-06.png" alt="Client logo">
+    <img src="../logos/airguides.jpeg" alt="Client logo">
+    <img src="../logos/logo-07.png" alt="Client logo">
+    <img src="../logos/logo-08.png" alt="Client logo">
+    <img src="../logos/collecting-cars-logo.svg" alt="Client logo">
+    <img src="../logos/logo-10.png" alt="Client logo">
+    <img src="../logos/logo-11.png" alt="Client logo">
+    <img src="../logos/rr-dark.webp" alt="Client logo">
+    <img src="../logos/logo-12.png" alt="Client logo">
+    <img src="../logos/logo-13.png" alt="Client logo">
+    <img src="../logos/Aerolight-Logo-Positive.png" alt="Client logo">
+    <img src="../logos/logo-14.png" alt="Client logo">
+    <img src="../logos/logo-16.png" alt="Client logo">
+    <img src="../logos/dressxox.webp" alt="Client logo">
     <!-- duplicate for seamless loop -->
-    <img src="logos/logo-01.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-02.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/big4-saltwater.webp" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-03.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-04.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/big4-tweed.webp" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-05.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-06.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/airguides.jpeg" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-07.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-08.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/collecting-cars-logo.svg" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-10.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-11.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/rr-dark.webp" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-12.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-13.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/Aerolight-Logo-Positive.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-14.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/logo-16.png" alt="Client logo" aria-hidden="true">
-    <img src="logos/dressxox.webp" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-01.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-02.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/big4-saltwater.webp" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-03.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-04.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/big4-tweed.webp" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-05.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-06.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/airguides.jpeg" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-07.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-08.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/collecting-cars-logo.svg" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-10.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-11.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/rr-dark.webp" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-12.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-13.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/Aerolight-Logo-Positive.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-14.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/logo-16.png" alt="Client logo" aria-hidden="true">
+    <img src="../logos/dressxox.webp" alt="Client logo" aria-hidden="true">
   </div>
 </section>
 
@@ -929,35 +1739,37 @@
 <section class="services" id="services">
   <div class="container">
     <div class="services-header">
-      <h2>What We Do</h2>
+      <h2>Is Your Marketing Being Done By Just One Or Two People?</h2>
+      <h3>How We Can Help</h3>
+      <p>More work than hours, and not enough people to keep up?<br>We can build the systems for you. Or we can teach you to build them yourself.</p>
     </div>
 
     <div class="services-grid">
 
       <!-- AI FOR MARKETING TEAM -->
-      <a href="#contact" class="service-card card-ai-marketing">
+      <a href="#option-a" class="service-card card-ai-marketing">
         <div class="service-icon si-ai-marketing">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/><path d="M5 17l.75 1.75L7.5 19.5l-1.75.75L5 22l-.75-1.75L2.5 19.5l1.75-.75L5 17z"/><path d="M19 14l.75 1.75L21.5 16.5l-1.75.75L19 19l-.75-1.75L16.5 16.5l1.75-.75L19 14z"/></svg>
         </div>
-        <div class="service-label">Same Team. Better Output.</div>
-        <h3>AI Systems For Your Marketing Team</h3>
-        <p>Marketing teams of any size can benefit from AI, especially when it's set up properly. We build systems trained on your brand, customers and voice. Faster output, consistent quality, less time on the parts that nobody enjoys.</p>
+        <div class="service-label">Same Person. Far More Output.</div>
+        <h3>Done For You Marketing Systems</h3>
+        <p>Systems trained on your brand, customers and voice. Systems that scale your marketing without scaling your headcount. Systems that survive staff turnover.</p>
         <span class="service-link">
-          Get in touch
+          See how it works
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </span>
       </a>
 
-      <!-- MARKETING -->
-      <a href="#contact" class="service-card card-marketing">
+      <!-- CLAUDE CODE TRAINING -->
+      <a href="#option-b" class="service-card card-marketing">
         <div class="service-icon si-marketing">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
         </div>
-        <div class="service-label">20+ Years Experience</div>
-        <h3>Google Ads &amp; Meta Ads</h3>
-        <p>Two decades of experience running paid ads for small businesses. We know what works, what's a waste of money, and how to tell the difference before you spend it.</p>
+        <div class="service-label">Where The Real Work Happens</div>
+        <h3>Claude Code Training</h3>
+        <p>Chat &amp; Projects are great for brainstorming. Claude Code is where you get real work done. If you're not using Claude Code yet, we can help.</p>
         <span class="service-link">
-          Get in touch
+          See the training
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </span>
       </a>
@@ -966,39 +1778,247 @@
   </div>
 </section>
 
-<!-- AI STRATEGY CALL -->
-<section class="strategy-call" id="strategy-call">
-  <div class="container">
-    <div class="strategy-call-box">
-      <h2>Book a Free <span>AI Strategy Call</span></h2>
-      <div class="strategy-call-content">
-        <div class="strategy-call-block">
-          <h3>What is it?</h3>
-          <p>A 20-minute look at your current AI setup and what a more advanced system could do for your marketing team. We'll cover what tools you're using, how your team is using them, and what's missing.</p>
-          <p>Then we'll show you what's actually possible:</p>
-          <ul class="strategy-call-bullets">
-            <li>What a Brand OS is and why it changes the quality of everything your team produces</li>
-            <li>What Claude Code and Claude Cowork unlock that most teams haven't accessed yet</li>
-            <li>What a realistic path forward looks like for your specific business</li>
-          </ul>
-        </div>
-        <div class="strategy-call-block">
-          <h3>Who is this for?</h3>
-          <p>Marketing teams that are using AI but know there's more to it than they're currently getting.</p>
-          <p>The tools are there, some prompts are working, but there's no real system behind it.</p>
-          <p>No consistent brand context, no documented workflows, nothing that would survive a staff change.</p>
-          <p class="strategy-call-emphasis">If that's where you are, this call is worth your time.</p>
-          <div class="strategy-call-footer">
-            <a href="#contact" class="btn-primary">
-              Book your free AI Strategy Call
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
+<!-- ══════ OPTION A ══════ -->
+<section class="option-block option-a" id="option-a">
+
+  <div class="option-head">
+    <div class="container">
+      <span class="option-tag">Option A</span>
+      <h2>Done For You Marketing Systems</h2>
+      <p class="option-sub">How it works, what to expect, and what it costs.</p>
+    </div>
+  </div>
+
+  <!-- A: THE OFFER EXPLAINED -->
+  <section class="offer" id="offer">
+    <div class="container">
+      <div class="offer-header">
+        <h2>What Could You Do With 20+ Hours a Month?</h2>
+        <p>Most marketing teams burn 20+ hours every month on repetitive work that can be automated. We find those hours, automate the highest-value stuff, and show you the time savings before you commit to anything else.</p>
       </div>
     </div>
+  </section>
+
+  <!-- A: THE PROCESS -->
+  <section class="option-pricing offer" id="option-a-process">
+    <div class="container">
+
+      <div class="pricing-bridge">
+        <h2>Four Steps to Finding Your Time</h2>
+        <p>From first conversation to a working automation that frees up real hours.</p>
+      </div>
+
+    <!-- STEPS -->
+    <div class="offer-steps">
+
+      <div class="offer-step">
+        <div class="step-head">
+          <span class="step-num">01</span>
+        </div>
+        <h3>A 15-Minute Chat</h3>
+        <p>No pitch. You work out whether we're legit, and we work out whether we can genuinely help. If we can't, we'll tell you, and point you somewhere that can.</p>
+      </div>
+
+      <div class="offer-step">
+        <div class="step-head">
+          <span class="step-num">02</span>
+        </div>
+        <h3>Marketing Audit</h3>
+        <p>We map your marketing: content, campaigns, reporting, and everything on your to-do list. You get a written roadmap showing you where 20+ hours of work can be automated and what to tackle first.</p>
+      </div>
+
+      <div class="offer-step step-highlight">
+        <div class="step-head">
+          <span class="step-num">03</span>
+          <span class="step-price">Normally $1,250</span>
+        </div>
+        <h3>Your Pilot Build</h3>
+        <p>We build one high-value automation from the audit — something that would save your team significant time each week. You run it, see how it works, and know exactly what the full build will look like before you decide to go further.</p>
+        <div class="step-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Free for a limited number of new clients
+        </div>
+      </div>
+
+      <div class="offer-step">
+        <div class="step-head">
+          <span class="step-num">04</span>
+        </div>
+        <h3>The Full Build</h3>
+        <p>We build out the production version, integrate it into your actual workflow, and train your team so they can run it without us. Thirty days of support included to iron out any issues.</p>
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="aih" id="examples">
+    <div class="container">
+
+      <div class="aih-head">
+        <h2>What's Not Getting Done?</h2>
+        <p>Are you automating these parts of your sales & marketing yet?</p>
+      </div>
+
+      <div class="aih-tabs" role="tablist" id="aihTabs"></div>
+      <p class="aih-role" id="aihRole"></p>
+
+      <div class="aih-panel" id="aihPanel" role="tabpanel"></div>
+
+    </div>
+  </section>
+
+  <!-- A: PRICING + GUARANTEE -->
+  <section class="option-pricing offer" id="option-a-pricing">
+    <div class="container">
+
+      <div class="pricing-bridge">
+        <h2>What Does It Cost To Get Started?</h2>
+        <p>Start with the audit. Find your 20+ hours.</p>
+      </div>
+
+    <!-- PRICING SUMMARY -->
+    <div class="pricing-summary">
+      <div class="pricing-summary-row">
+        <span class="pricing-summary-label">15-Minute Chat</span>
+        <span class="pricing-summary-value pricing-summary-free">Free</span>
+      </div>
+      <div class="pricing-summary-row">
+        <span class="pricing-summary-label">Marketing Audit</span>
+        <span class="pricing-summary-value">$500 <span class="pricing-summary-note">— fully refundable if we don't find 20+ hours of automatable work</span></span>
+      </div>
+      <div class="pricing-summary-row">
+        <span class="pricing-summary-label">Your Pilot Build</span>
+        <span class="pricing-summary-value pricing-summary-free">Free <span class="pricing-summary-note">— normally $1,250</span></span>
+      </div>
+      <div class="pricing-summary-row">
+        <span class="pricing-summary-label">The Full Build</span>
+        <span class="pricing-summary-value">Quoted</span>
+      </div>
+    </div>
+
+    <!-- PILOT VS FULL BUILD -->
+    <div style="background: var(--bg-white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 44px; max-width: 860px; margin: 0 auto 56px;">
+      <h2 style="font-weight: 800; font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 22px; text-align: center;">Pilot vs. Full Build</h2>
+      <p style="font-size: 16.5px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 16px;">The pilot demonstrates one high-value workflow from your audit — something your team does every week. It's built to prove we can deliver on what we found, and to show you the time savings in action.</p>
+      <p style="font-size: 16.5px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 0;">The full build is production-ready: integrated into your actual systems, running on your real business data, and trained so your team can run it without us.</p>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="offer-guarantee">
+      <div class="guarantee-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h2 class="guarantee-heading">We Guarantee We'll Find Those Hours</h2>
+      <div class="guarantee-body">
+        <p><span class="guarantee-lead">If the audit doesn't identify at least 20+ hours a month of automatable work in your marketing, we'll refund you in full.</span> No questions asked.</p>
+        <p>That's it. That's the promise. We find the time or you don't pay.</p>
+        <p>The pilot then proves we can actually automate what we found. If for some reason we can't deliver on that, same deal — full refund, and you still own the roadmap.</p>
+        <p>We're confident about what we'll find. That confidence starts with backing it up.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="offer-cta">
+      <a href="#contact" class="btn-primary">
+        Book your free 15-minute chat
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <p class="offer-capacity">We take on four to five pilot builds a month, so there's a queue at times.</p>
+    </div>
+
+
+    </div>
+  </section>
+
+</section><!-- /#option-a -->
+
+<!-- ══════ OPTION B ══════ -->
+<section class="option-block option-b" id="option-b">
+
+  <div class="option-head">
+    <div class="container">
+      <span class="option-tag">Option B</span>
+      <h2>Claude Code Training</h2>
+      <p class="option-sub">For teams who'd rather build this capability in-house.</p>
+    </div>
   </div>
-</section>
+
+<!-- B: WHAT YOU LEARN -->
+  <section class="examples" id="option-b-learn">
+    <div class="container">
+
+      <div class="examples-header">
+        <h2>What We Can Help You With</h2>
+        <p>Training shaped around where you're starting from and what you need.</p>
+      </div>
+
+      <div class="coverage-grid">
+
+        <div class="coverage-item">
+          <h3>Fundamentals</h3>
+          <p>The shift from chatbot to agent: how Claude Code actually works, how it's different to working with Claude in the browser, and why that difference matters.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Driving It</h3>
+          <p>Briefing properly. Getting it to show you the plan before it executes. Reading the output and steering mid-task. Sessions, context, files in and out. The skills that make the difference between a neat demo and something you actually use every day.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Building Systems</h3>
+          <p>Your Brand OS, captured once. Everything about your business, your customers, how you write. Built into a system that runs the same way every time, by anyone on your team.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Marketing Applications</h3>
+          <p>Content pipelines. Ad copy at scale. Email campaigns. Monthly reports that write themselves. Research that verifies instead of invents. Images and video. Decks and spreadsheets. Everything from briefing to finished, live.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Connecting Your Stack</h3>
+          <p>Your real tools: Google Drive, Meta Ads, Google Ads, Shopify, Klaviyo, Analytics, whatever you actually use. Making them talk to Claude Code so the work flows across systems instead of stopping at spreadsheet exports.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Running It Unattended</h3>
+          <p>Scheduling jobs to run overnight. Setting up automations so things work while you sleep. Running multiple things at once instead of waiting for one to finish. The moves that actually change what one person can handle.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Team & Governance</h3>
+          <p>Brand consistency across operators. Approval workflows. Client data safety. Onboarding a new person without the founder. What changes when it's more than just you.</p>
+        </div>
+
+        <div class="coverage-item">
+          <h3>Keeping It Alive</h3>
+          <p>When something's not working, how to diagnose it. Updating your systems as the business changes. Staying current without chasing every announcement. Building your next system outside marketing.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+<!-- B: CTA -->
+  <section class="option-pricing offer" id="option-b-start">
+    <div class="container">
+      <div class="pricing-bridge">
+        <h2>How To Get Started</h2>
+        <p>Training gets scoped once we've talked: how your team works now, what you're using, and what you want to be able to do without help. Start with a conversation and we'll work out what's worth covering.</p>
+      </div>
+      <div class="offer-cta">
+        <a href="#contact" class="btn-primary">
+          Talk about training
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</section><!-- /#option-b -->
 
 <!-- ABOUT STRIP -->
 <section class="about-strip" id="about">
@@ -1009,15 +2029,22 @@
         <span class="section-tag">About</span>
         <h2>Meet Craig</h2>
         <p class="name">Founder, Dark Horse Marketing</p>
-        <img src="profile-t.jpg" alt="Craig Crooks" class="headshot-placeholder">
+        <img src="../profile-t.jpg" alt="Craig Crooks" class="headshot-placeholder">
       </div>
 
       <div class="about-body">
-        <p>I've spent 20+ years helping small businesses get more from their marketing.</p>
-        <p>Paid ad campaigns on Google, Meta and other platforms. Email &amp; social media marketing, strategy consulting and whatever else needed doing.</p>
-        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business...not the other way around.</p>
+        <p><strong>I've spent 20+ years in marketing, most of it solo or with a small team.</strong></p>
+        <p>That means I know exactly what it feels like:</p>
+        <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.7;">
+          <li>A to-do list that never gets smaller</li>
+          <li>New channels you'd love to test but can't because you're stuck on execution</li>
+          <li>Content ideas sitting in your head because there's no time to produce them</li>
+          <li>Hours spent pulling together reports when you could be running campaigns that actually generate revenue</li>
+        </ul>
+        <p>So I got serious about learning AI. Specifically how to build systems that actually solve these problems for small teams.</p>
+        <p>Now I help small marketing teams automate the work that's eating their time, so they can focus on what actually drives revenue.</p>
         <p>I'm based in Coffs Harbour and love working one-on-one with local businesses. I also take on clients Australia-wide if the fit is good.</p>
-        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. Your job is to run your business. Mine is to make sure you're not missing anything that matters.</p>
+        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. You've got a business to run. I'll make sure you're not missing anything that matters.</p>
         <div class="standout">You don't need to keep up with AI. That's my job.</div>
 
         <div class="trust-items">
@@ -1060,7 +2087,7 @@
   <div class="container">
     <span class="section-tag" style="color:rgba(255,255,255,0.35)">Get In Touch</span>
     <h2>Let's See How We Can Help</h2>
-    <p>Ready to take a proper look at what AI or Paid Ads could do for your business? Reach out and we'll work through it together.</p>
+    <p>Ready to take a proper look at what AI could do for your business? Reach out and we'll work through it together.</p>
     <div class="contact-grid">
       <div class="contact-card">
         <div class="label">Email</div>
@@ -1072,7 +2099,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">© 2025 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
+  <div class="container">© 2026 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
 </footer>
 
 <!-- MOBILE NAV DRAWER -->
@@ -1085,6 +2112,8 @@
   </div>
   <ul class="nav-drawer-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#option-a">Done For You</a></li>
+    <li><a href="#option-b">Training</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1140,6 +2169,164 @@
   var d = 'darkhorse' + '.' + 'marketing';
   var el = document.getElementById('contact-email');
   if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
+})();
+</script>
+
+<script>
+/* WHERE AI HELPS — channel tabs content. Every tile starts with a
+   verb: what AI does, not what the topic is. Six per area so the
+   panel never changes height. */
+var AIH_AREAS = [
+  { name: "Paid Ads", role: "Less wasted spend, more sales from the same budget", items: [
+    "Run the account audit agencies charge thousands for",
+    "Spot the angle every competitor's using, and the one nobody is",
+    "Refresh your creative before your audience gets sick of it",
+    "Catch new junk search terms before you waste money on them",
+    "Find the gold in a campaign that looked like it failed",
+    "Block the placements quietly burning your budget"
+  ]},
+  { name: "SEO", role: "Better rankings, more traffic, more sales", items: [
+    "Run the technical audit agencies charge thousands for",
+    "Manage monthly rankings reports yourself, in minutes",
+    "Find your best quick wins, ranked by the traffic they'd bring",
+    "Plan a content calendar around real search demand",
+    "Handle on-page fixes without waiting on a developer",
+    "Make sure AI recommends you, not just Google"
+  ]},
+  { name: "Local SEO", role: "Show up first when someone nearby searches", items: [
+    "Run the local visibility audit agencies charge big money for",
+    "Understand where competitors are strong, and what to do next",
+    "Turn every happy customer into a review, automatically",
+    "Identify if last month's changes actually moved the needle",
+    "Keep your profile posting, week after week",
+    "Stop guessing which local terms are worth targeting"
+  ]},
+  { name: "Email & CRM", role: "More money from the list you've built", items: [
+    "Uncover the patterns hiding across hundreds of past campaigns",
+    "Close the loop between what worked and what you write next",
+    "Get a month ahead instead of leaving it to the last minute",
+    "Find the offer that actually gets people to sign up",
+    "Discover what flows are missing, & generate the plan to create",
+    "Quickly build multiple versions of a flow for testing"
+  ]},
+  { name: "Social", role: "Content that keeps up, replies that don't fall behind", items: [
+    "Turn one afternoon into a month of posts",
+    "Reply to every comment and DM before they go cold",
+    "See exactly what's working for competitors in your space",
+    "Customise the tone used for each platform",
+    "Stop guessing which platforms are worth the effort",
+    "Find which type of post is quietly your best performer"
+  ]},
+  { name: "Website", role: "A site that stays accurate, fast, and working while you're busy running the business", items: [
+    "Check all links and fix the ones that are broken",
+    "Analyse your site for out of date info and draft the rewrite",
+    "Compare your site with competitors and flag what's missing",
+    "Sort all testimonials and place the right one on the right page",
+    "Catch the form that's been quietly losing you leads",
+    "Turn GA4 data into a ranked action list"
+  ]},
+  { name: "Calls & Enquiries", role: "Nobody left waiting, nothing missed", items: [
+    "SMS a missed call before they've dialled your competitor",
+    "Quote more jobs in less time and spend more hours earning",
+    "Turn a voicemail into a transcript, a priority, and a reply",
+    "Every enquiry answered instantly, using actual business info",
+    "Flag high-value after hours enquiries worth responding to now",
+    "Turn a sent quote into a job, with follow-up that just happens"
+  ]},
+  { name: "Reviews", role: "A reputation that closes the sale before you even talk to them", items: [
+    "Find the product idea hiding in your customers' own words",
+    "Mine customer reviews for the language that actually sells",
+    "Reply to every review within hours, not when you get around to it",
+    "Draft replies to bad reviews that don't sound defensive",
+    "Turn a steady stream of reviews into better local rankings",
+    "Turn a competitor's bad reviews into your next ad angle"
+  ]},
+  { name: "Analytics", role: "Straight answers instead of guessing what worked", items: [
+    "Skip the paid tools and ask your data directly",
+    "Stop logging into five platforms to answer one question",
+    "Build automated reporting around what you actually care about",
+    "Attach a next step to every number you're given",
+    "Base planning decisions on solid analysis",
+    "Know what broke before it shows up in next month's report"
+  ]}
+];
+
+(function () {
+  var tabs = document.getElementById('aihTabs');
+  var panel = document.getElementById('aihPanel');
+  var role = document.getElementById('aihRole');
+  if (!tabs || !panel || !role) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer = null;
+
+  function show(i) {
+    var area = AIH_AREAS[i];
+
+    Array.prototype.forEach.call(tabs.children, function (t, n) {
+      t.setAttribute('aria-selected', String(n === i));
+      t.tabIndex = n === i ? 0 : -1;
+    });
+
+    role.textContent = area.role;
+
+    panel.innerHTML = '';
+    area.items.forEach(function (label, n) {
+      var d = document.createElement('div');
+      d.className = 'aih-item';
+      d.textContent = label;
+      if (!reduce) d.style.animationDelay = (n * 35) + 'ms';
+      panel.appendChild(d);
+    });
+  }
+
+  function stopCycle() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  AIH_AREAS.forEach(function (area, i) {
+    var t = document.createElement('button');
+    t.className = 'aih-tab';
+    t.type = 'button';
+    t.setAttribute('role', 'tab');
+    t.setAttribute('aria-selected', 'false');
+    t.textContent = area.name;
+    t.addEventListener('click', function () { stopCycle(); show(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      stopCycle();
+      var next = (i + (e.key === 'ArrowRight' ? 1 : -1) + AIH_AREAS.length) % AIH_AREAS.length;
+      tabs.children[next].focus();
+      show(next);
+    });
+    tabs.appendChild(t);
+  });
+
+  show(0);
+
+  /* one pass through all eight when it first scrolls into view, so
+     someone who never clicks still sees the lot. Any interaction
+     stops it permanently. */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        var i = 0;
+        timer = setInterval(function () {
+          i++;
+          if (i >= AIH_AREAS.length) { stopCycle(); show(0); return; }
+          show(i);
+        }, 1000);
+      });
+    }, { threshold: 0.5 });
+    io.observe(panel);
+
+    ['pointerdown', 'keydown'].forEach(function (ev) {
+      tabs.addEventListener(ev, stopCycle);
+    });
+  }
 })();
 </script>
 </body>
