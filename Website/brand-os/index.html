@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand OS — A Permanent Foundation for Claude Cowork | Dark Horse Marketing</title>
+<title>Brand OS — A Permanent Foundation for Claude Code &amp; Cowork | Dark Horse Marketing</title>
 <meta name="description" content="A Brand Operating System gives Claude permanent knowledge of your business, your voice, and your customers — so every task your team runs starts brand-aware, automatically.">
 
 <link rel="icon" href="/favicon.ico">
@@ -107,7 +107,7 @@
 
   /* HERO */
   .hero {
-    padding: 96px 0 80px;
+    padding: 96px 0 56px;
     text-align: center;
     max-width: 760px;
     margin: 0 auto;
@@ -140,14 +140,7 @@
     line-height: 1.6;
     color: var(--ink-muted);
     max-width: 600px;
-    margin: 0 auto 40px;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin: 0 auto;
   }
 
   /* BUTTONS */
@@ -235,24 +228,27 @@
 
   .file-card-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     color: var(--accent);
-    margin-bottom: 14px;
-    display: block;
+    background: var(--accent-light);
+    border-radius: 999px;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+    display: inline-block;
     text-align: center;
   }
 
-  .file-card-label .label-name {
+  .file-card .label-name {
     display: block;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--ink-light);
-    margin-bottom: 4px;
+    color: var(--ink);
+    margin-bottom: 10px;
   }
 
   .file-card h3 {
@@ -321,47 +317,6 @@
   .change-item p {
     font-size: 14px;
     line-height: 1.6;
-    color: var(--ink-muted);
-  }
-
-  /* DIFFERENT FROM */
-  .diff-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 680px;
-    margin: 32px auto 0;
-  }
-
-  .diff-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 26px;
-  }
-
-  .diff-card .diff-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    font-weight: 500;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .diff-card h3 {
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.01em;
-    margin-bottom: 10px;
-    color: var(--ink);
-  }
-
-  .diff-card p {
-    font-size: 14px;
-    line-height: 1.65;
     color: var(--ink-muted);
   }
 
@@ -444,14 +399,6 @@
   }
 
   .process-step p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--ink-muted);
-  }
-
-  .process-footer {
-    max-width: 680px;
-    margin: 28px auto 0;
     font-size: 16px;
     line-height: 1.7;
     color: var(--ink-muted);
@@ -714,84 +661,80 @@
     color: var(--ink-muted);
   }
 
-  /* CLOSE CTA */
-  .close-section {
-    background: var(--bg-dark);
-    color: #ffffff;
-    padding: 96px 0;
-  }
-
-  .close-inner {
-    max-width: 580px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .close-inner h2 {
-    font-weight: 800;
-    font-size: clamp(32px, 4.5vw, 52px);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-
-  .close-inner p {
-    font-size: 18px;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 40px;
-    max-width: 460px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .close-ctas {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  }
-
-  .btn-primary-lg {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--accent);
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 18px 36px;
-    border-radius: 14px;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .btn-primary-lg:hover { background: var(--accent-hover); transform: translateY(-2px); }
-
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: rgba(255,255,255,0.7);
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 18px 32px;
-    border-radius: 14px;
-    border: 1.5px solid rgba(255,255,255,0.2);
-    transition: border-color 0.2s, color 0.2s, transform 0.15s;
-  }
-
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #ffffff; transform: translateY(-2px); }
-
   .close-footnote {
     font-size: 14px;
     color: rgba(255,255,255,0.3);
     line-height: 1.6;
   }
+
+  /* CONTACT */
+  .contact {
+    padding: 72px 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-dark);
+    color: #ffffff;
+  }
+
+  .contact .container {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .contact .section-tag { color: rgba(255,255,255,0.35); }
+
+  .contact h2 {
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+    color: #ffffff;
+  }
+
+  .contact > .container > p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 48px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .contact-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+
+  .contact-card a {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-card a:hover { color: var(--accent); }
 
   /* FOOTER */
   footer {
@@ -909,14 +852,12 @@
   .hero-badge { animation: fadeUp 0.7s ease 0.1s both; }
   .hero h1   { animation: fadeUp 0.8s ease 0.2s both; }
   .hero-sub  { animation: fadeUp 0.8s ease 0.35s both; }
-  .hero-ctas { animation: fadeUp 0.8s ease 0.5s both; }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .files-grid { grid-template-columns: 1fr; max-width: 480px; }
     .included-grid { grid-template-columns: 1fr 1fr; max-width: 640px; }
     .changes-grid { grid-template-columns: 1fr; gap: 36px; }
-    .diff-grid { grid-template-columns: 1fr; }
     .fit-grid { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 40px; }
     .about-label { position: static; }
@@ -934,15 +875,13 @@
     .hero { padding: 64px 0 56px; }
     .section { padding: 56px 0; }
     .pricing-box { padding: 36px 28px; }
-    .close-section { padding: 72px 0; }
+    .contact { padding: 56px 0; }
     .guarantee-box { flex-direction: column; gap: 16px; }
   }
 
   @media (max-width: 540px) {
-    .hero-ctas { flex-direction: column; align-items: center; }
     .pricing-ctas { flex-direction: column; align-items: center; }
-    .close-ctas { flex-direction: column; align-items: center; }
-    .btn-primary, .btn-secondary, .btn-primary-lg, .btn-ghost { width: 100%; justify-content: center; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -953,9 +892,11 @@
   <div class="container nav-inner">
     <a href="https://darkhorse.marketing/" class="logo">Dark Horse Marketing<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="https://darkhorse.marketing/#services">Services</a></li>
-      <li><a href="https://darkhorse.marketing/#about">About</a></li>
-      <li><a href="https://darkhorse.marketing/#contact">Contact</a></li>
+      <li><a href="https://darkhorse.marketing/">Home</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#whats-included">What's Included</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -971,14 +912,7 @@
       Brand OS
     </div>
     <h1>The Brand Operating System</h1>
-    <p class="hero-sub">A permanent foundation layer for Claude Cowork. Everything Claude needs to know about your business — installed once, available to every task, every prompt, and every person on your team, automatically.</p>
-    <div class="hero-ctas">
-      <a href="#pricing" class="btn-primary">
-        Get your Brand OS — $750
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="#" class="btn-secondary">Book a call first</a>
-    </div>
+    <p class="hero-sub">A permanent foundation layer for Claude Code &amp; Claude Cowork. Everything Claude needs to know about your business, so what comes back sounds like you wrote it. Set up once, read automatically on every task, by everyone on your team.</p>
   </div>
 </section>
 
@@ -992,17 +926,20 @@
     </div>
     <div class="files-grid">
       <div class="file-card">
-        <span class="file-card-label"><span class="label-name">The Business</span>business.md</span>
+        <span class="label-name">The Business</span>
+        <span class="file-card-label">business.md</span>
         <h3>What The Business Is</h3>
         <p>The factual brief: positioning, what makes the business different, hero products or services, the competitive landscape, proof points. Written the way you'd brief a new marketing hire on their first day.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label"><span class="label-name">The Voice</span>voice.md</span>
+        <span class="label-name">The Voice</span>
+        <span class="file-card-label">voice.md</span>
         <h3>How The Brand Actually Sounds</h3>
         <p>Captured from real patterns in real content. Not adjectives like "bold and confident." Sentence structures, rhythm, the words the brand uses, the words it never uses, and concrete before-and-after rewrites that show Claude what the voice looks like in practice.</p>
       </div>
       <div class="file-card">
-        <span class="file-card-label"><span class="label-name">The Customer</span>customer.md</span>
+        <span class="label-name">The Customer</span>
+        <span class="file-card-label">customer.md</span>
         <h3>The Customer In Their Own Language</h3>
         <p>Built from real reviews, real conversations, and real research — not invented personas. Core pains, objections, buying triggers, and the phrases customers use to describe their own problems.</p>
       </div>
@@ -1044,34 +981,12 @@
   </div>
 </section>
 
-<!-- HOW IT'S DIFFERENT -->
-<section class="section section-white">
-  <div class="container">
-    <div class="prose" style="text-align:center; max-width: 820px;">
-      <span class="section-tag">How this is different</span>
-      <h2>Not a Prompt Library. Not a Guidelines PDF.</h2>
-    </div>
-    <div class="diff-grid">
-      <div class="diff-card">
-        <span class="diff-label">A prompt library</span>
-        <h3>Still Requires Manual Context</h3>
-        <p>A prompt library still makes someone paste in brand context every time they use it. The output stays only as consistent as the person doing the pasting.</p>
-      </div>
-      <div class="diff-card">
-        <span class="diff-label">A brand guidelines PDF</span>
-        <h3>Written For People, Not Claude</h3>
-        <p>A guidelines PDF is written for people to read. The AI never opens it. The Brand OS is written for Claude to read — and it reads it automatically, on every task.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- WHO IT'S FOR -->
-<section class="section">
+<section class="section section-white">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
       <span class="section-tag">Who this is for</span>
-      <h2 style="font-size: clamp(28px, 3.8vw, 44px);">Businesses That Handle Their Own Marketing and Want More From the AI Tools They're Already Using.</h2>
+      <h2 style="font-size: clamp(28px, 3.8vw, 44px);">Built for teams already using AI, and not getting enough out of it.</h2>
     </div>
     <div class="fit-grid">
       <div>
@@ -1079,19 +994,15 @@
         <ul class="fit-list">
           <li>
             <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Your marketing team is growing and you want consistent output across everyone, regardless of experience level</span>
+            <span>You're rewriting most of what Claude gives you before it sounds like your brand</span>
           </li>
           <li>
             <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>You're bringing someone new into the marketing function and want them productive quickly</span>
+            <span>More than one person writes for the brand, and you can tell which one did</span>
           </li>
           <li>
             <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Your team uses Claude or ChatGPT regularly and you suspect there's better and more consistent output available than what you're getting</span>
-          </li>
-          <li>
-            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Your brand knowledge lives mostly in one person's head, and you'd rather it didn't</span>
+            <span>Everything about how the brand sounds sits in one person's head</span>
           </li>
         </ul>
       </div>
@@ -1100,7 +1011,11 @@
         <ul class="fit-list">
           <li>
             <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span>You've already built and documented your own foundation files and are working in Claude Code or Cowork with a Skill library — you've effectively got a Brand OS already, whether or not you call it that</span>
+            <span>You're committed to ChatGPT or Gemini. The files would still be useful there, but we build and set everything up in Claude, because right now it's the best option for small teams</span>
+          </li>
+          <li>
+            <svg class="fit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>You've already built your own foundation files and run a Skill library. You've got a Brand OS already, whatever you call it</span>
           </li>
         </ul>
       </div>
@@ -1109,41 +1024,40 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section section-white">
+<section class="section" id="how-it-works">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 48px;">
       <span class="section-tag">How it works</span>
-      <h2>Three Stages. The Only Real Demand on Your Time Is the First Hour.</h2>
+      <h2>Three Stages. We Do the Heavy Lifting.</h2>
     </div>
     <div class="process-list">
       <div class="process-step">
         <span class="step-num">01</span>
         <div>
           <h3>Discovery &amp; Prep</h3>
-          <p>A structured interview — you answer questions about the business: your positioning, your customers, your voice, what makes you different. It takes around an hour and there's nothing to prepare. You just bring what you know about your business. Before we start, we'll also ask you to pull together your best existing content — top-performing emails, ads, landing pages, anything that sounds most like you — so the research phase has the right material to work from.</p>
+          <p>A structured interview — you answer questions about the business: your positioning, your customers, your voice, what makes you different. It takes around an hour and there's no homework beforehand. You just bring what you know about your business.</p>
         </div>
       </div>
       <div class="process-step">
         <span class="step-num">02</span>
         <div>
           <h3>Research And Build</h3>
-          <p>This is where the heavy lifting happens. Using your existing assets — website, ads, content, reviews — we research and build all three files. The voice is extracted from real content, not invented. The customer intelligence comes from real reviews and conversations, not made-up personas. Doing it properly takes several days, and it's the part that's hardest to do well yourself: it's the difference between three files anyone can rough out in an afternoon and three files built from real evidence.</p>
+          <p>You send over your best existing content — top-performing emails, ads, landing pages, anything that sounds most like you. We work from that, plus your website and customer reviews, to research and build all three files. The voice is extracted from real content, not invented. The customer intelligence comes from real reviews and conversations, not made-up personas.</p>
         </div>
       </div>
       <div class="process-step">
         <span class="step-num">03</span>
         <div>
           <h3>Setup</h3>
-          <p>Once the files are complete, we install and configure everything in your Claude workspace, run test tasks against the Brand OS, and refine anything that doesn't feel right. You get a working system, not just files that are technically finished.</p>
+          <p>Once the files are complete, we help you get everything set up in your Claude workspace and show you how to use them to improve the quality of everything you create for your business with Claude. This can include basic Claude Code training if you're just getting started.</p>
         </div>
       </div>
     </div>
-    <p class="process-footer">From the discovery session to a working system is about a week. The only real demand on your time is that first hour.</p>
   </div>
 </section>
 
 <!-- WHAT'S INCLUDED -->
-<section class="section">
+<section class="section section-white" id="whats-included">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 0;">
       <span class="section-tag">What's included</span>
@@ -1162,28 +1076,28 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
         </div>
         <h3>Installation &amp; Setup</h3>
-        <p>We install and configure the files in your Claude Cowork workspace, run test tasks against the Brand OS, and refine anything that doesn't feel right. You get a working system from day one, not files sitting in a folder waiting to be read.</p>
+        <p>We get you set up in your Claude workspace, with a walkthrough so your team knows how to use it. You get a working system from day one, not files sitting in a folder waiting to be read.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-purple">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <h3>Two Custom Claude Skills</h3>
-        <p>Skills sit on top of the Brand OS and do specific jobs — and each one reads from your foundation files automatically. We build two scoped to your team's highest-volume tasks, so you can see how the system works in practice from the start.</p>
+        <h3>Two Claude Skills</h3>
+        <p>Skills sit on top of the Brand OS and do specific jobs. We build two, chosen from a set we know works well with a Brand OS, so you can see the system running from day one. They're a starting point rather than a finished product — something real to adjust once you know what your team needs.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-orange">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>An Anti-Slop Skill</h3>
+        <h3>The Sounds-Like-AI Check</h3>
         <p>Strips out the generic AI patterns — "unlock," "game-changer," safe filler — that creep into output even when the brand context is right. Your Brand OS teaches Claude what your voice is. This catches what it isn't. Run it as a final pass before anything goes out.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3>A Self-Improving Skill</h3>
-        <p>Checks the output of your other Skills against their own rules and improves them over time. The system gets sharper the more you use it.</p>
+        <h3>Customising Skills</h3>
+        <p>A short session on taking a Skill and shaping it around what you actually do — including how to build in the requirement that it reads your Brand OS, so whatever it produces comes out on brand.</p>
       </div>
       <div class="included-card">
         <div class="inc-icon inc-teal">
@@ -1197,7 +1111,7 @@
 </section>
 
 <!-- PRICING -->
-<section class="section section-white" id="pricing">
+<section class="section" id="pricing">
   <div class="container">
     <div style="text-align:center; margin-bottom: 36px;">
       <span class="section-tag">What it costs</span>
@@ -1205,13 +1119,12 @@
     <div class="pricing-box">
       <div class="pricing-amount">$750</div>
       <p class="pricing-note">Introductory price — limited time</p>
-      <p class="pricing-body">Everything above, delivered over about a week. You're not paying for an hour of someone's time. You're paying for a permanent system — one that makes every piece of AI-generated content your team produces better from the day it goes in, and keeps getting more useful the more you build on it.</p>
+      <p class="pricing-body">Everything above, delivered in less than a week. You're paying for a permanent system — one that makes every piece of AI-generated content your team produces better from the day it goes in, and keeps getting more useful the more you build on it.</p>
       <div class="pricing-ctas">
-        <a href="#" class="btn-primary">
-          Get your Brand OS — $750
+        <a href="#contact" class="btn-primary">
+          Get in touch
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#" class="btn-secondary">Book a call first</a>
       </div>
     </div>
     <div class="guarantee-box">
@@ -1227,7 +1140,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section section-white">
   <div class="container">
     <div class="prose" style="text-align:center; margin-bottom: 48px;">
       <span class="section-tag">FAQs</span>
@@ -1235,16 +1148,16 @@
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <h3>Why Claude Cowork?</h3>
-        <p>Claude Cowork is designed as a shared team workspace, and it's the cleanest way to make foundation files available automatically to every task. It's built around an agent model, which means Skills run on top of your Brand OS without anyone having to load context manually each time. Everyone on the team works from the same foundation, every session, without thinking about it.</p>
+        <h3>Why Claude Code / Cowork?</h3>
+        <p>Because they work with real files on your machine, not just a chat window. Claude in the browser starts from nothing every time and you paste context in by hand. Claude Code and Cowork read your Brand OS straight off your computer, so every task starts brand-aware without anyone having to remember to load anything. That's the whole reason the system holds up in practice.</p>
       </div>
       <div class="faq-item">
         <h3>Can I Use This With ChatGPT or Gemini?</h3>
-        <p>The system is built Claude-native, and that's deliberate. Claude's ability to read foundation files and run Skills consistently is core to how the Brand OS holds up in practice. The same files pasted into another tool won't behave the same way — the agent layer that reads them automatically isn't there. If you're committed to ChatGPT or Gemini, this probably isn't the right fit, and I'd say so rather than sell you something that won't perform.</p>
+        <p>The files themselves are useful anywhere — you could load them into a custom GPT or a Gemini Gem and get better output than without them. We build and support this in Claude because we think it's the best option for small businesses getting real work done.</p>
       </div>
       <div class="faq-item">
         <h3>Do I Need to Pay for Claude?</h3>
-        <p>Yes. The Brand OS runs inside Claude Cowork, which needs a paid Claude plan. It's a modest monthly cost next to what the system saves a team in time and gives you access to the more advanced features of Claude.</p>
+        <p>Yes. The Brand OS runs inside Claude Code or Cowork, both of which need a paid Claude plan. It's a modest monthly cost next to what the system saves a team in time and gives you access to the more advanced features of Claude.</p>
       </div>
       <div class="faq-item">
         <h3>Is My Business Information Safe in Claude?</h3>
@@ -1255,7 +1168,7 @@
 </section>
 
 <!-- ABOUT -->
-<section class="section section-white">
+<section class="section">
   <div class="container">
     <div class="about-inner">
 
@@ -1267,11 +1180,19 @@
       </div>
 
       <div class="about-body">
-        <p>I've spent 20+ years helping small businesses get more from their marketing.</p>
-        <p>Paid ad campaigns on Google, Meta and other platforms. Email &amp; social media marketing, strategy consulting and whatever else needed doing.</p>
-        <p>Now I build AI systems for those same businesses, using that marketing experience to make sure the technology actually serves the business...not the other way around.</p>
+        <p><strong>I've spent 20+ years in marketing, most of it solo or with a small team.</strong></p>
+        <p>That means I know exactly what it feels like:</p>
+        <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.7;">
+          <li>A to-do list that never gets smaller</li>
+          <li>New channels you'd love to test but can't because you're stuck on execution</li>
+          <li>Content ideas sitting in your head because there's no time to produce them</li>
+          <li>Hours spent pulling together reports instead of improving what's running or launching what's next</li>
+        </ul>
+        <p>So I got serious about learning AI. Specifically how to build systems that actually solve these problems.</p>
+        <p>Now I help small marketing teams automate the work that's eating their time, so they can focus on what actually drives revenue.</p>
+        <p>That work rarely stops neatly at marketing. Chase a slow process far enough and you're usually in sales. The follow-up that didn't happen, the CRM nobody updates.</p>
         <p>I'm based in Coffs Harbour and love working one-on-one with local businesses. I also take on clients Australia-wide if the fit is good.</p>
-        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. Your job is to run your business. Mine is to make sure you're not missing anything that matters.</p>
+        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. You've got a business to run. I'll make sure you're not missing anything that matters.</p>
         <div class="standout">You don't need to keep up with AI. That's my job.</div>
 
         <div class="trust-items">
@@ -1309,27 +1230,25 @@
   </div>
 </section>
 
-<!-- CLOSE -->
-<section class="close-section">
+<!-- CONTACT -->
+<section class="contact" id="contact">
   <div class="container">
-    <div class="close-inner">
-      <h2>Book a Call to Talk Through Your Business and Get Started.</h2>
-      <p>Or if you're ready to go, you can book and pay directly below.</p>
-      <div class="close-ctas">
-        <a href="#" class="btn-primary-lg">
-          Get your Brand OS — $750
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="#" class="btn-ghost">Book a call first</a>
+    <span class="section-tag" style="color:rgba(255,255,255,0.35)">Get In Touch</span>
+    <h2>Let's Talk About Your Brand OS</h2>
+    <p>Send me a message and I'll walk you through what's involved, what it'd look like for your business, and whether it's the right fit.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="label">Email</div>
+        <a id="contact-email" href="#">craig&#8203;@&#8203;darkhorse&#8203;.&#8203;marketing</a>
       </div>
-      <p class="close-footnote">Built for Claude Cowork — a more capable setup than standard browser-based Claude.</p>
     </div>
+    <p class="close-footnote" style="margin-top:40px;">Built for Claude Code &amp; Cowork — a more capable setup than standard browser-based Claude.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">© 2025 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
+  <div class="container">© 2026 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
 </footer>
 
 <!-- MOBILE NAV DRAWER -->
@@ -1341,9 +1260,11 @@
     </button>
   </div>
   <ul class="nav-drawer-links">
-    <li><a href="https://darkhorse.marketing/#services">Services</a></li>
-    <li><a href="https://darkhorse.marketing/#about">About</a></li>
-    <li><a href="https://darkhorse.marketing/#contact">Contact</a></li>
+    <li><a href="https://darkhorse.marketing/">Home</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#whats-included">What's Included</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </div>
 
@@ -1388,6 +1309,15 @@
   drawer.querySelectorAll('.nav-drawer-links a').forEach(function(link) {
     link.addEventListener('click', closeDrawer);
   });
+})();
+</script>
+
+<script>
+(function() {
+  var u = 'craig';
+  var d = 'darkhorse' + '.' + 'marketing';
+  var el = document.getElementById('contact-email');
+  if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
 })();
 </script>
 
