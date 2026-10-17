@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coffs Harbour AI Consulting | Dark Horse Marketing</title>
-<meta name="description" content="20+ years in marketing. Now building AI systems and delivering Claude Code training for marketing teams.">
-
-<link rel="icon" href="/favicon.ico">
+<meta name="description" content="20+ years in marketing. Now helping Australian businesses find where AI adds to their profit, starting with a 90-minute strategy session.">
+<link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --bg: #fafaf8;
@@ -1653,20 +1651,130 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+
+  /* ===== AI OFFICER REPOSITION: additions, built from existing tokens ===== */
+  .hero-cta { margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .hero-cta-note { font-size: 14px; color: var(--ink-light); max-width: 460px; }
+  .text-link { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 15px; }
+  .text-link:hover { color: var(--accent-hover); text-decoration: underline; }
+  .hero-credential { font-size: 15px; color: var(--ink-muted); max-width: 560px; margin: 28px auto 0; line-height: 1.6; }
+
+  .prose { max-width: 680px; margin: 0 auto; }
+  .prose p { font-size: 18px; color: var(--ink-mid); line-height: 1.7; margin-bottom: 18px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose .prose-strong { font-weight: 700; color: var(--ink); }
+
+  .bc-teal   { --card-accent: var(--feat-teal);   --card-accent-border: var(--feat-teal); }
+  .bc-purple { --card-accent: var(--feat-purple); --card-accent-border: var(--feat-purple); }
+  .bc-orange { --card-accent: var(--feat-orange); --card-accent-border: var(--feat-orange); }
+  .bc-blue   { --card-accent: var(--accent);      --card-accent-border: var(--accent); }
+  .bc-teal .service-icon   { background: var(--feat-teal-light); }
+  .bc-purple .service-icon { background: var(--feat-purple-light); }
+  .bc-orange .service-icon { background: var(--feat-orange-light); }
+  .bc-blue .service-icon   { background: var(--accent-light); }
+
+  .build-grid { align-items: start; }
+  .build-card { padding: 34px 30px 28px; }
+  .build-card.span-2 { grid-column: 1 / -1; }
+  .build-card > p { margin-bottom: 18px; }
+  .build-for {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-light); margin-bottom: 18px; font-weight: 500;
+  }
+  .build-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 18px; }
+  .build-links a { color: var(--card-accent); font-weight: 700; font-size: 15px; text-decoration: none; }
+  .build-links a:hover { text-decoration: underline; }
+  .build-more { border-top: 1px solid var(--border-light); padding-top: 16px; }
+  .build-more summary {
+    cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 15px; color: var(--card-accent);
+  }
+  .build-more summary::-webkit-details-marker { display: none; }
+  .build-more summary svg { transition: transform 0.2s; }
+  .build-more[open] summary svg { transform: rotate(90deg); }
+  .build-body { margin-top: 18px; }
+  .build-body h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.01em; }
+  .build-body p { font-size: 15.5px; color: var(--ink-mid); line-height: 1.6; margin-bottom: 16px; }
+  .build-body p:last-child { margin-bottom: 0; }
+  .build-measured {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; color: var(--card-accent); background: var(--bg); border: 1px solid var(--border);
+    border-radius: 100px; padding: 4px 12px; margin-bottom: 18px;
+  }
+  .builds-close { max-width: 720px; margin: 48px auto 0; text-align: center; font-size: 18px; color: var(--ink-muted); line-height: 1.65; }
+
+  .offer-steps.three { grid-template-columns: repeat(3, 1fr); }
+  .step-price { white-space: nowrap; }
+  .cta-row { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 40px; }
+
+  .option-seat { --opt-accent: var(--accent); --opt-tint: var(--accent-light); }
+  .option-body { padding: 36px 32px 48px; max-width: 760px; }
+  .option-body p { font-size: 17.5px; color: var(--ink-mid); line-height: 1.7; margin-bottom: 16px; }
+  .fit-list { list-style: none; margin: 0; padding: 0; }
+  .fit-list li { position: relative; padding-left: 28px; margin-bottom: 14px; font-size: 17px; color: var(--ink-mid); line-height: 1.6; }
+  .fit-list li::before {
+    content: ''; position: absolute; left: 4px; top: 0.62em; width: 9px; height: 9px;
+    border-radius: 50%; background: var(--opt-accent);
+  }
+
+  .faq { max-width: 760px; margin: 0 auto; }
+  .faq-item { background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; padding: 20px 26px; margin-bottom: 12px; }
+  .faq-item summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    font-weight: 700; font-size: 17.5px; color: var(--ink); letter-spacing: -0.01em;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary svg { flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
+  .faq-item[open] summary svg { transform: rotate(45deg); }
+  .faq-item p { margin-top: 12px; font-size: 16px; color: var(--ink-muted); line-height: 1.65; }
+
+  .contact-cta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin: 8px 0 40px; }
+  .contact-cta .text-link { color: rgba(255,255,255,0.75); }
+  .contact-cta .text-link:hover { color: #ffffff; }
+
+  @media (max-width: 1040px) {
+    .offer-steps.three { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .build-card { padding: 28px 22px 24px; }
+    .build-card.span-2 { grid-column: auto; }
+    .prose p { font-size: 17px; }
+    .option-body { padding: 28px 24px 36px; }
+    .faq-item { padding: 18px 20px; }
+  }
+
+  .price-note { font-size: 17px; line-height: 1.55; color: var(--ink-mid); text-align: center; max-width: 620px; margin-top: 4px; }
+  .price-note strong { color: var(--ink); font-weight: 800; font-size: 20px; }
+
+  /* ===== Tighter vertical rhythm ===== */
+  .hero { padding: 80px 0 64px; }
+  .offer { padding: 64px 0; }
+  .offer-header { margin-bottom: 32px; }
+  .offer-header h2:last-child { margin-bottom: 0; }
+  .builds-close { margin-top: 32px; }
+  .cta-row { margin-top: 32px; }
+  .about-strip { padding: 64px 0; }
+  .contact { padding: 64px 0; }
+  .contact h2 { margin-bottom: 28px; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 56px 24px 48px; }
+    .offer { padding: 48px 0; }
+    .offer-header { margin-bottom: 24px; }
+    .builds-close { margin-top: 24px; }
+    .cta-row { margin-top: 24px; }
+    .about-strip, .contact { padding: 48px 0; }
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="container nav-inner">
-    <a href="https://darkhorse.marketing/" class="logo">Dark Horse Marketing<span>.</span></a>
+    <a href="" class="logo">Dark Horse Marketing<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#option-a">Done For You</a></li>
-      <li><a href="#option-b">Training</a></li>
+      <li><a href="marketing/">Marketing</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <span></span>
@@ -1678,354 +1786,135 @@
 
 <!-- HERO -->
 <section class="hero container">
-  <div class="hero-badge">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-    Marketing & AI for Small Business
-  </div>
   <h1>
-    <span class="line-sm">We Give Your Marketing Manager</span>
-    <span class="line-lg">An Unfair Advantage</span>
+    <span class="line-sm">Your People Grow The Business.</span>
+    <span class="line-lg">AI Should Give Them Time To Do It.</span>
   </h1>
-  <p class="hero-sub">One marketing person with the right AI systems installed can out-produce a larger department that doesn't have them</p>
-  <p class="hero-location">Based in Coffs Harbour. Working with businesses across Australia.</p>
+  <p class="hero-sub">Most teams lose hours every week to work that adds nothing. Done properly, AI takes that work off their plate, and the time comes back as more sales, better service and lower costs.</p>
 </section>
 
 <!-- LOGO STRIP -->
 <section class="logos-strip">
   <div class="logos-track">
-    <img src="../logos/logo-01.png" alt="Client logo">
-    <img src="../logos/logo-02.png" alt="Client logo">
-    <img src="../logos/big4-saltwater.webp" alt="Client logo">
-    <img src="../logos/logo-03.png" alt="Client logo">
-    <img src="../logos/logo-04.png" alt="Client logo">
-    <img src="../logos/big4-tweed.webp" alt="Client logo">
-    <img src="../logos/logo-05.png" alt="Client logo">
-    <img src="../logos/logo-06.png" alt="Client logo">
-    <img src="../logos/airguides.jpeg" alt="Client logo">
-    <img src="../logos/logo-07.png" alt="Client logo">
-    <img src="../logos/logo-08.png" alt="Client logo">
-    <img src="../logos/collecting-cars-logo.svg" alt="Client logo">
-    <img src="../logos/logo-10.png" alt="Client logo">
-    <img src="../logos/logo-11.png" alt="Client logo">
-    <img src="../logos/rr-dark.webp" alt="Client logo">
-    <img src="../logos/logo-12.png" alt="Client logo">
-    <img src="../logos/logo-13.png" alt="Client logo">
-    <img src="../logos/Aerolight-Logo-Positive.png" alt="Client logo">
-    <img src="../logos/logo-14.png" alt="Client logo">
-    <img src="../logos/logo-16.png" alt="Client logo">
-    <img src="../logos/dressxox.webp" alt="Client logo">
+    <img src="logos/logo-01.png" alt="Client logo">
+    <img src="logos/logo-02.png" alt="Client logo">
+    <img src="logos/big4-saltwater.webp" alt="Client logo">
+    <img src="logos/logo-03.png" alt="Client logo">
+    <img src="logos/logo-04.png" alt="Client logo">
+    <img src="logos/big4-tweed.webp" alt="Client logo">
+    <img src="logos/logo-05.png" alt="Client logo">
+    <img src="logos/logo-06.png" alt="Client logo">
+    <img src="logos/airguides.jpeg" alt="Client logo">
+    <img src="logos/logo-07.png" alt="Client logo">
+    <img src="logos/logo-08.png" alt="Client logo">
+    <img src="logos/collecting-cars-logo.svg" alt="Client logo">
+    <img src="logos/logo-10.png" alt="Client logo">
+    <img src="logos/logo-11.png" alt="Client logo">
+    <img src="logos/rr-dark.webp" alt="Client logo">
+    <img src="logos/logo-12.png" alt="Client logo">
+    <img src="logos/logo-13.png" alt="Client logo">
+    <img src="logos/Aerolight-Logo-Positive.png" alt="Client logo">
+    <img src="logos/logo-14.png" alt="Client logo">
+    <img src="logos/logo-16.png" alt="Client logo">
+    <img src="logos/dressxox.webp" alt="Client logo">
     <!-- duplicate for seamless loop -->
-    <img src="../logos/logo-01.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-02.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/big4-saltwater.webp" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-03.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-04.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/big4-tweed.webp" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-05.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-06.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/airguides.jpeg" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-07.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-08.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/collecting-cars-logo.svg" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-10.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-11.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/rr-dark.webp" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-12.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-13.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/Aerolight-Logo-Positive.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-14.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/logo-16.png" alt="Client logo" aria-hidden="true">
-    <img src="../logos/dressxox.webp" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-01.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-02.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/big4-saltwater.webp" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-03.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-04.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/big4-tweed.webp" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-05.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-06.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/airguides.jpeg" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-07.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-08.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/collecting-cars-logo.svg" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-10.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-11.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/rr-dark.webp" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-12.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-13.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/Aerolight-Logo-Positive.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-14.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/logo-16.png" alt="Client logo" aria-hidden="true">
+    <img src="logos/dressxox.webp" alt="Client logo" aria-hidden="true">
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- THE HARD PART -->
+<section class="offer" id="problem">
   <div class="container">
-    <div class="services-header">
-      <h2>Is Your Marketing Being Done By Just One Or Two People?</h2>
-      <h3>How We Can Help</h3>
-      <p>We can build the systems for you. Or we can train your team to build them in-house.</p>
+    <div class="offer-header">
+      <h2>The Hard Part Isn't The AI.<br>It's Knowing Which Work To Hand Over.</h2>
     </div>
-
-    <div class="services-grid">
-
-      <!-- AI FOR MARKETING TEAM -->
-      <a href="#option-a" class="service-card card-ai-marketing card-featured">
-        <div class="service-icon si-ai-marketing">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--feat-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"/><path d="M5 17l.75 1.75L7.5 19.5l-1.75.75L5 22l-.75-1.75L2.5 19.5l1.75-.75L5 17z"/><path d="M19 14l.75 1.75L21.5 16.5l-1.75.75L19 19l-.75-1.75L16.5 16.5l1.75-.75L19 14z"/></svg>
-        </div>
-        <div class="service-label">Same Person. Far More Output.</div>
-        <h3>Done For You Marketing Systems</h3>
-        <p>Systems trained on your brand, customers and voice. Systems that scale your marketing without scaling your headcount. Systems that survive staff turnover.</p>
-        <span class="service-link">
-          See how it works
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
-      <!-- CLAUDE CODE TRAINING -->
-      <a href="#option-b" class="service-card card-marketing">
-        <div class="service-icon si-marketing">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--feat-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        </div>
-        <div class="service-label">Or Learn to Build It Yourself</div>
-        <h3>Claude Code Training</h3>
-        <p>Prefer to build this in-house? We train your team on Claude Code and how to turn it into systems that actually work.</p>
-        <span class="service-link">
-          See the training
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
+    <div class="prose">
+      <p>Every business has a handful of jobs that quietly eat the week. Quotes that take a day to turn around. Invoices typed in by hand. The same report rebuilt every month. The same customer question answered for the fifth time.</p>
+      <p>AI can help with most of them. But they're not all worth the money. Pick the wrong one first and you end up with a subscription nobody uses, and a team that's gone off the whole idea.</p>
+      <p>So the first step isn't buying anything. It's working out which job is costing you the most, and whether AI can actually fix it.</p>
+      <p class="prose-strong">That's what the 90-minute session is for.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════ OPTION A ══════ -->
-<section class="option-block option-a" id="option-a">
-
-  <div class="option-head">
-    <div class="container">
-      <span class="option-tag">Option A</span>
-      <h2>Done For You Marketing Systems</h2>
-      <p class="option-sub">How it works and what to expect.</p>
+<!-- THE SESSION -->
+<section class="offer" id="how">
+  <div class="container">
+    <div class="offer-header">
+      <h2>The 90-Minute Strategy Session</h2>
+    </div>
+    <div class="prose">
+      <p>You and whoever runs the day-to-day sit down with me: your ops lead, office manager or bookkeeper. We don't talk about code or the latest AI headlines. We talk about your processes, the hours they take, the mistakes they cause, and what all that costs you.</p>
+      <p>The goal is profit: more revenue, lower costs, or more done by the team you already have. Not fewer people.</p>
     </div>
   </div>
+</section>
 
-  <!-- A: THE OFFER EXPLAINED -->
-  <section class="offer" id="offer">
-    <div class="container">
-      <div class="offer-header">
-        <h2>What Could You Do With 20+ Hours a Month?</h2>
-        <p>Most marketing teams burn 20+ hours every month on repetitive work that can be automated. We find those hours, automate the highest-value stuff, and show you the time savings before you commit to anything else.</p>
-      </div>
+<!-- WHAT YOU WALK AWAY WITH -->
+<section class="offer" id="plan">
+  <div class="container">
+    <div class="offer-header">
+      <h2>What You Walk Away With</h2>
     </div>
-  </section>
-
-  <!-- A: THE PROCESS -->
-  <section class="option-pricing offer" id="option-a-process">
-    <div class="container">
-
-      <div class="pricing-bridge">
-        <h2>Four Steps to Finding More Time</h2>
-        <p>From first conversation to a working automation that frees up real hours.</p>
-      </div>
-
-    <!-- STEPS -->
-    <div class="offer-steps">
-
+    <div class="offer-steps three">
       <div class="offer-step">
-        <div class="step-head">
-          <span class="step-num">01</span>
-        </div>
-        <h3>A 15-Minute Chat</h3>
-        <p>No pitch. You work out whether we're legit, and we work out whether we can genuinely help. If we can't, we'll tell you, and point you somewhere that can.</p>
+        <div class="step-head"><span class="step-num">01</span></div>
+        <h3>Your Week, Mapped</h3>
+        <p>The repetitive jobs that came up in the session, with a rough count of the hours each one takes. Retyping, chasing, reporting, answering the same question twice.</p>
       </div>
-
       <div class="offer-step">
-        <div class="step-head">
-          <span class="step-num">02</span>
-        </div>
-        <h3>Marketing Audit</h3>
-        <p>We go through your marketing properly: content, campaigns, reporting, and where it spills into sales. You get a written roadmap showing you where 20+ hours of work can be automated and what to tackle first.</p>
+        <div class="step-head"><span class="step-num">02</span></div>
+        <h3>The Jobs Worth Handing To AI</h3>
+        <p>The two or three where AI is most likely to pay for itself, each with an hours-and-dollars estimate built from what you've told me. Some may already be sitting in software you pay for.</p>
       </div>
-
-      <div class="offer-step step-highlight">
-        <div class="step-head">
-          <span class="step-num">03</span>
-          <span class="step-price">Normally $1,250</span>
-        </div>
-        <h3>Your Pilot Build</h3>
-        <p>The audit gives you a shortlist. We agree which one to start with, then build it: something that would save your team significant time each month. You take a look and see how it works, and know exactly what the full build will look like before you decide to go further.</p>
-        <div class="step-note">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Free for a limited number of new clients
-        </div>
-      </div>
-
       <div class="offer-step">
-        <div class="step-head">
-          <span class="step-num">04</span>
-        </div>
-        <h3>The Full Build</h3>
-        <p>We build out the production version, integrate it into your actual workflow, and train your team so they can run it without us. Thirty days of support included to iron out any issues.</p>
-      </div>
+        <div class="step-head"><span class="step-num">03</span></div>
+        <h3>Where To Start, And What To Leave</h3>
+        <p>The one I'd do first, and why. Plus the jobs I'd keep with a person, because not everything should go to AI.</p>
+      </div>    </div>
+    <p class="builds-close">It all comes to you as one plain-English plan within five business days.</p>
+  </div>
+</section>
 
+<!-- WHO IT'S FOR -->
+<section class="offer" id="why">
+  <div class="container">
+    <div class="offer-header">
+      <h2>Is This Right For Your Business?</h2>
     </div>
-
+    <div class="prose">
+      <p>It's a good fit if:</p>
+      <ul class="fit-list option-seat">
+        <li>Your people spend hours every week on admin that feels like it should be quicker.</li>
+        <li>You want to get more done without hiring more people.</li>        <li>You're turning over roughly $3M to $30M a year.</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- A: GUARANTEE -->
-  <section class="offer" id="option-a-guarantee">
-    <div class="container">
-      <div class="offer-guarantee">
-        <div class="guarantee-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h2 class="guarantee-heading">We Guarantee We'll Find Those Hours</h2>
-        <div class="guarantee-body">
-          <p><span class="guarantee-lead">If the audit doesn't identify at least 20+ hours a month of automatable work in your marketing, we'll refund you in full.</span> No questions asked.</p>
-          <p>That's it. That's the promise. We find the time or you don't pay.</p>
-          <p>The pilot then proves we can actually automate what we found. If for some reason we can't deliver on that, same deal. Full refund, and you still own the roadmap.</p>
-          <p>We're confident about what we'll find. That confidence starts with backing it up.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXAMPLES -->
-  <section class="aih" id="examples">
-    <div class="container">
-
-      <div class="aih-head">
-        <h2>What's Not Getting Done?</h2>
-        <p>Are you automating these parts of your sales & marketing yet?</p>
-      </div>
-
-      <div class="aih-tabs" role="tablist" id="aihTabs"></div>
-      <p class="aih-role" id="aihRole"></p>
-
-      <div class="aih-panel" id="aihPanel" role="tabpanel"></div>
-
-    </div>
-  </section>
-
-  <!-- A: PRICING -->
-  <section class="option-pricing offer" id="option-a-pricing">
-    <div class="container">
-
-      <div class="pricing-bridge">
-        <h2>What Does It Cost To Get Started?</h2>
-        <p>Start with the audit. Find your 20+ hours.</p>
-      </div>
-
-    <!-- PRICING SUMMARY -->
-    <div class="pricing-summary">
-      <div class="pricing-summary-row">
-        <span class="pricing-summary-label">15-Minute Chat</span>
-        <span class="pricing-summary-value pricing-summary-free">Free</span>
-      </div>
-      <div class="pricing-summary-row">
-        <span class="pricing-summary-label">Marketing Audit</span>
-        <span class="pricing-summary-value">$500 <span class="pricing-summary-note">— fully refundable if we don't find 20+ hours of automatable work</span></span>
-      </div>
-      <div class="pricing-summary-row">
-        <span class="pricing-summary-label">Your Pilot Build</span>
-        <span class="pricing-summary-value pricing-summary-free">Free <span class="pricing-summary-note">— normally $1,250</span></span>
-      </div>
-      <div class="pricing-summary-row">
-        <span class="pricing-summary-label">The Full Build</span>
-        <span class="pricing-summary-value">Quoted</span>
-      </div>
-    </div>
-
-    <!-- PILOT VS FULL BUILD -->
-    <div style="background: var(--bg-white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 44px; max-width: 860px; margin: 0 auto 56px;">
-      <h2 style="font-weight: 800; font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 22px; text-align: center;">Pilot vs. Full Build</h2>
-      <p style="font-size: 16.5px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 16px;">The pilot demonstrates one high-value workflow from your audit: something your team does every week. It's built to prove we can deliver on what we found, and to show you the time savings in action.</p>
-      <p style="font-size: 16.5px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 0;">The full build is production-ready: integrated into your actual systems, running on your real business data, and trained so your team can run it without us.</p>
-    </div>
-
-    <!-- CTA -->
-    <div class="offer-cta">
-      <a href="#contact" class="btn-primary">
-        Book your free 15-minute chat
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-
-
-    </div>
-  </section>
-
-</section><!-- /#option-a -->
-
-<!-- ══════ OPTION B ══════ -->
-<section class="option-block option-b" id="option-b">
-
-  <div class="option-head">
-    <div class="container">
-      <span class="option-tag">Option B</span>
-      <h2>Claude Code Training</h2>
-      <p class="option-sub">For teams who'd rather build this capability in-house.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn-primary">Book My Strategy Session <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <p class="price-note"><strong>Investment: $750</strong></p>
     </div>
   </div>
-
-<!-- B: WHAT YOU LEARN -->
-  <section class="examples" id="option-b-learn">
-    <div class="container">
-
-      <div class="examples-header">
-        <h2>What We Can Help You With</h2>
-        <p>Training shaped around where you're starting from and what you need.</p>
-      </div>
-
-      <div class="coverage-grid">
-
-        <div class="coverage-item">
-          <h3>Fundamentals</h3>
-          <p>The shift from chatbot to agent: how Claude Code actually works, how it's different to working with Claude in the browser, and why that difference matters.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Driving It</h3>
-          <p>Briefing properly. Getting it to show you the plan before it executes. Reading the output and steering mid-task. Sessions, context, files in and out. The skills that make the difference between a neat demo and something you actually use every day.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Building Systems</h3>
-          <p>Your Brand OS, captured once. Everything about your business, your customers, how you write. Built into a system that runs the same way every time, by anyone on your team.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Marketing Applications</h3>
-          <p>Content pipelines. Ad copy at scale. Email campaigns. Monthly reports that write themselves. Research that verifies instead of invents. Images and video. Decks and spreadsheets. Everything from briefing to finished, live.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Connecting Your Stack</h3>
-          <p>Your real tools: Google Drive, Meta Ads, Google Ads, Shopify, Klaviyo, your CRM, Analytics, whatever you actually use. Making them talk to Claude Code so the work flows across systems instead of stopping at spreadsheet exports.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Running It Unattended</h3>
-          <p>Scheduling jobs to run overnight. Setting up automations so things work while you sleep. Running multiple things at once instead of waiting for one to finish. The moves that actually change what one person can handle.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Team & Governance</h3>
-          <p>Brand consistency across operators. Approval workflows. Client data safety. Onboarding a new person without the founder. What changes when it's more than just you.</p>
-        </div>
-
-        <div class="coverage-item">
-          <h3>Keeping It Alive</h3>
-          <p>When something's not working, how to diagnose it. Updating your systems as the business changes. Staying current without chasing every announcement. Building your next system outside marketing.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-<!-- B: CTA -->
-  <section class="option-pricing offer" id="option-b-start">
-    <div class="container">
-      <div class="pricing-bridge">
-        <h2>How To Get Started</h2>
-        <p>Training gets scoped once we've talked: how your team works now, what you're using, and what you want to be able to do without help. Start with a conversation and we'll work out what's worth covering.</p>
-      </div>
-      <div class="offer-cta">
-        <a href="#contact" class="btn-primary">
-          Talk about training
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</section><!-- /#option-b -->
+</section>
 
 <!-- ABOUT STRIP -->
 <section class="about-strip" id="about">
@@ -2033,27 +1922,24 @@
     <div class="about-inner">
 
       <div class="about-label">
-        <span class="section-tag">About</span>
         <h2>Meet Craig</h2>
         <p class="name">Founder, Dark Horse Marketing</p>
         <img src="./profile-t.jpg" alt="Craig Crooks" class="headshot-placeholder">
       </div>
 
       <div class="about-body">
-        <p><strong>I've spent 20+ years in marketing, most of it solo or with a small team.</strong></p>
-        <p>That means I know exactly what it feels like:</p>
+        <p><strong>I've spent 20+ years in marketing, in-house and through my own agency. I also run a separate small business.</strong></p>
+        <p>So I know what it's like when there's more work than people:</p>
         <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.7;">
           <li>A to-do list that never gets smaller</li>
-          <li>New channels you'd love to test but can't because you're stuck on execution</li>
-          <li>Content ideas sitting in your head because there's no time to produce them</li>
-          <li>Hours spent pulling together reports instead of improving what's running or launching what's next</li>
+          <li>Ideas you'd love to try but can't, because you're stuck doing the day-to-day</li>
+          <li>The same data typed into three different systems</li>
+          <li>Hours spent pulling reports together instead of acting on them</li>
         </ul>
-        <p>So I got serious about learning AI. Specifically how to build systems that actually solve these problems.</p>
-        <p>Now I help small marketing teams automate the work that's eating their time, so they can focus on what actually drives revenue.</p>
-        <p>That work rarely stops neatly at marketing. Chase a slow process far enough and you're usually in sales. The follow-up that didn't happen, the CRM nobody updates.</p>
+        <p>So I got serious about learning AI, and specifically how to build systems that solve these problems.</p>
+        <p>Now I work with businesses to find the jobs AI can take on, so their people have more time for the work that brings in money.</p>
         <p>I'm based in Coffs Harbour and love working one-on-one with local businesses. I also take on clients Australia-wide if the fit is good.</p>
-        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. You've got a business to run. I'll make sure you're not missing anything that matters.</p>
-        <div class="standout">You don't need to keep up with AI. That's my job.</div>
+        <p>AI moves fast. New tools, new capabilities, new hype. It never stops. You've got a business to run. I'll make sure you're not missing anything that matters.</p>        <div class="standout">You don't need to keep up with AI. That's my job.</div>
 
         <div class="trust-items">
           <div class="trust-item">
@@ -2063,15 +1949,6 @@
             <div>
               <h4>Systems, Not Just Tools</h4>
               <p>I build documented AI systems your team can actually use, not a subscription to something you'll forget about in three months.</p>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-            </div>
-            <div>
-              <h4>Built for Your Business</h4>
-              <p>Everything is configured around your operations, your customers, and your goals. We focus on solving your biggest problems.</p>
             </div>
           </div>
           <div class="trust-item">
@@ -2093,9 +1970,7 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
-    <span class="section-tag" style="color:rgba(255,255,255,0.35)">Get In Touch</span>
-    <h2>Let's See How We Can Help</h2>
-    <p>Ready to take a proper look at what AI could do for your business? Reach out and we'll work through it together.</p>
+    <h2>Get In Touch</h2>
     <div class="contact-grid">
       <div class="contact-card">
         <div class="label">Email</div>
@@ -2119,11 +1994,8 @@
     </button>
   </div>
   <ul class="nav-drawer-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#option-a">Done For You</a></li>
-    <li><a href="#option-b">Training</a></li>
+    <li><a href="marketing/">Marketing</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </div>
 
@@ -2175,167 +2047,15 @@
 (function() {
   var u = 'craig';
   var d = 'darkhorse' + '.' + 'marketing';
+  var addr = u + '@' + d;
   var el = document.getElementById('contact-email');
-  if (el) { el.href = 'mailto:' + u + '@' + d; el.textContent = u + '@' + d; }
-})();
-</script>
-
-<script>
-/* WHERE AI HELPS — channel tabs content. Every tile starts with a
-   verb: what AI does, not what the topic is. Six per area so the
-   panel never changes height. */
-var AIH_AREAS = [
-  { name: "Paid Ads", role: "Less wasted spend, more sales from the same budget", items: [
-    "Run the account audit agencies charge thousands for",
-    "Spot the angle every competitor's using, and the one nobody is",
-    "Refresh your creative before your audience gets sick of it",
-    "Catch new junk search terms before you waste money on them",
-    "Find the gold in a campaign that looked like it failed",
-    "Block the placements quietly burning your budget"
-  ]},
-  { name: "SEO", role: "Better rankings, more traffic, more sales", items: [
-    "Run the technical audit agencies charge thousands for",
-    "Manage monthly rankings reports yourself, in minutes",
-    "Find your best quick wins, ranked by the traffic they'd bring",
-    "Plan a content calendar around real search demand",
-    "Handle on-page fixes without waiting on a developer",
-    "Make sure AI recommends you, not just Google"
-  ]},
-  { name: "Local SEO", role: "Show up first when someone nearby searches", items: [
-    "Run the local visibility audit agencies charge big money for",
-    "Understand where competitors are strong, and what to do next",
-    "Turn every happy customer into a review, automatically",
-    "Identify if last month's changes actually moved the needle",
-    "Keep your profile posting, week after week",
-    "Stop guessing which local terms are worth targeting"
-  ]},
-  { name: "Email & CRM", role: "More money from the people who've already put their hand up", items: [
-    "Uncover the patterns hiding across hundreds of past campaigns",
-    "Turn call notes into CRM records without the data entry",
-    "Get a month ahead instead of leaving it to the last minute",
-    "Find the offer that actually gets people to sign up",
-    "Discover what flows are missing, & generate the plan to create",
-    "Quickly build multiple versions of a flow for testing"
-  ]},
-  { name: "Social", role: "Content that keeps up, replies that don't fall behind", items: [
-    "Turn one afternoon into a month of posts",
-    "Reply to every comment and DM before they go cold",
-    "See exactly what's working for competitors in your space",
-    "Customise the tone used for each platform",
-    "Stop guessing which platforms are worth the effort",
-    "Find which type of post is quietly your best performer"
-  ]},
-  { name: "Website", role: "A site that stays accurate, fast, and working while you're busy running the business", items: [
-    "Check all links and fix the ones that are broken",
-    "Analyse your site for out of date info and draft the rewrite",
-    "Compare your site with competitors and flag what's missing",
-    "Sort all testimonials and place the right one on the right page",
-    "Catch the form that's been quietly losing you leads",
-    "Turn GA4 data into a ranked action list"
-  ]},
-  { name: "Calls & Enquiries", role: "Nobody left waiting, nothing missed", items: [
-    "SMS a missed call before they've dialled your competitor",
-    "Quote more jobs in less time and spend more hours earning",
-    "Turn a voicemail into a transcript, a priority, and a reply",
-    "Every enquiry answered instantly, using actual business info",
-    "Flag high-value after hours enquiries worth responding to now",
-    "Turn a sent quote into a job, with follow-up that just happens"
-  ]},
-  { name: "Reviews", role: "A reputation that closes the sale before you even talk to them", items: [
-    "Find the product idea hiding in your customers' own words",
-    "Mine customer reviews for the language that actually sells",
-    "Reply to every review within hours, not when you get around to it",
-    "Draft replies to bad reviews that don't sound defensive",
-    "Turn a steady stream of reviews into better local rankings",
-    "Turn a competitor's bad reviews into your next ad angle"
-  ]},
-  { name: "Analytics", role: "Straight answers instead of guessing what worked", items: [
-    "Skip the paid tools and ask your data directly",
-    "Stop logging into five platforms to answer one question",
-    "Build automated reporting around what you actually care about",
-    "Attach a next step to every number you're given",
-    "See which campaigns bring leads that actually buy",
-    "Know what broke before it shows up in next month's report"
-  ]}
-];
-
-(function () {
-  var tabs = document.getElementById('aihTabs');
-  var panel = document.getElementById('aihPanel');
-  var role = document.getElementById('aihRole');
-  if (!tabs || !panel || !role) return;
-
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var timer = null;
-
-  function show(i) {
-    var area = AIH_AREAS[i];
-
-    Array.prototype.forEach.call(tabs.children, function (t, n) {
-      t.setAttribute('aria-selected', String(n === i));
-      t.tabIndex = n === i ? 0 : -1;
-    });
-
-    role.textContent = area.role;
-
-    panel.innerHTML = '';
-    area.items.forEach(function (label, n) {
-      var d = document.createElement('div');
-      d.className = 'aih-item';
-      d.textContent = label;
-      if (!reduce) d.style.animationDelay = (n * 35) + 'ms';
-      panel.appendChild(d);
-    });
-  }
-
-  function stopCycle() {
-    if (timer) { clearInterval(timer); timer = null; }
-  }
-
-  AIH_AREAS.forEach(function (area, i) {
-    var t = document.createElement('button');
-    t.className = 'aih-tab';
-    t.type = 'button';
-    t.setAttribute('role', 'tab');
-    t.setAttribute('aria-selected', 'false');
-    t.textContent = area.name;
-    t.addEventListener('click', function () { stopCycle(); show(i); });
-    t.addEventListener('keydown', function (e) {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      stopCycle();
-      var next = (i + (e.key === 'ArrowRight' ? 1 : -1) + AIH_AREAS.length) % AIH_AREAS.length;
-      tabs.children[next].focus();
-      show(next);
-    });
-    tabs.appendChild(t);
+  if (el) { el.href = 'mailto:' + addr; el.textContent = addr; }
+  document.querySelectorAll('.js-mail').forEach(function(a) {
+    var s = a.getAttribute('data-subject');
+    a.href = 'mailto:' + addr + (s ? '?subject=' + encodeURIComponent(s) : '');
   });
-
-  show(0);
-
-  /* one pass through all eight when it first scrolls into view, so
-     someone who never clicks still sees the lot. Any interaction
-     stops it permanently. */
-  if (!reduce && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        io.disconnect();
-        var i = 0;
-        timer = setInterval(function () {
-          i++;
-          if (i >= AIH_AREAS.length) { stopCycle(); show(0); return; }
-          show(i);
-        }, 1000);
-      });
-    }, { threshold: 0.5 });
-    io.observe(panel);
-
-    ['pointerdown', 'keydown'].forEach(function (ev) {
-      tabs.addEventListener(ev, stopCycle);
-    });
-  }
 })();
 </script>
+
 </body>
 </html>
