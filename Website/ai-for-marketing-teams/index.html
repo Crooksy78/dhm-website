@@ -1980,7 +1980,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">© 2026 Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
+  <div class="container">© <span class="year">2026</span> Dark Horse Marketing — Coffs Harbour, NSW. Craig Crooks, Founder.</div>
 </footer>
 
 <!-- MOBILE NAV DRAWER -->
@@ -2209,5 +2209,6 @@ var AIH_AREAS = [
   }
 })();
 </script>
+<script>document.querySelectorAll(".year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
 </body>
 </html>
